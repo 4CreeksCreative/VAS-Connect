@@ -1,0 +1,786 @@
+@import 'zy_settings'
+
+//normalize-css()
+//base()
+$headerHeight = 100px
+$border = 1px $bordergray solid
+
+
+// --- fonts
+a,p,h1,h2,h3,h4,h5,h6,input,textarea,select,option,span,li,button
+	font-family $uni !important
+	font-weight 600
+h1,h2
+	font-weight 700
+	margin-bottom 20px
+h3,h4,h5,h6
+	font-weight 600
+	margin-bottom 20px
+p,a,input,textarea,select,option,span,li
+	font-weight 600
+
+.uppercase
+	text-transform uppercase
+.small
+	font-size 14px
+h1
+	font-size 60px
+	line-height 60px
+	@media (max-width:767px)
+		font-size 40px
+		line-height 40px
+h2
+	font-size 50px
+h3
+	font-size 30px
+	line-height 34px
+	font-weight 600
+h4
+	font-size 24px
+	line-height 32px
+	font-weight 700
+h5
+	font-size 24px
+	line-height 28px
+	font-weight 600
+h6, label
+	font-size 20px
+	line-height 28px
+	font-weight 600
+p,button,input,textarea
+	font-size 18px
+
+
+#blog-content, #about-content, section>.container>.row
+	p:not([class*="color-"]), pre
+		font-weight normal
+		font-family $corbel
+	pre
+		white-space pre-line
+		font-size 18px
+		padding initial
+		background initial
+		border initial
+		border-radius initial
+		line-height 30px
+		max-height initial
+		max-width initial
+		display block
+		margin initial
+		word-break initial
+		word-wrap initial
+		color $gray3
+
+.weight-normal
+	font-weight normal
+.weight-500
+	font-weight 500
+.weight-600
+	font-weight 600
+.weight-700
+	font-weight 700
+.weight-800
+	font-weight 800
+.strong
+	font-weight bold
+
+
+section
+	padding 50px 0
+
+.color-yellow
+	color $yellow
+.color-green
+	color $green
+.color-green2
+	color $green2
+.color-blue
+	color $blue
+.color-default
+	color $gray3
+.color-white
+	color $white
+.bg-green
+	background-color $green
+.bg-green2
+	background-color $green2
+.bg-blue
+	background-color $blue
+.bg-gray
+	background-color $gray
+
+
+// --- fixes
+.dropdown__content
+	padding 0 !important
+section.imagebg.parallax
+	//min-height 750px;
+	//border-radius 0px 0px 25% 0px
+.img-clip
+	//border-radius 0px 0px 25% 0px
+.pad-sm
+	padding 10px
+@media (max-width: 767px)
+	.float-center-xs
+		float none
+		margin 20px auto
+@media (max-width: 992px)
+	.float-center-sm
+		float none
+		margin 20px auto
+p i
+	margin-right 10px
+.col-img-fix
+	position absolute
+	height 100%
+.hamburger-toggle i
+	color $gray3
+#language-dropdown
+	box-shadow $box-shadow
+.language-dropdown
+	border-left $border
+	padding-left 10px
+	img
+		padding 0 10px
+textarea
+	min-height 300px
+#hero
+	.slider
+		z-index 0 !important
+		height 100%
+	.slides
+		height 100%
+		z-index 0 !important
+	.slide > img
+		min-width 100%
+		height 100%
+	.flickity-viewport, .flickity-slider, & >li
+		height 100% !important
+.home-header-fix
+	top 0
+	bottom 0
+	margin auto
+	z-index 1
+
+
+
+
+
+
+// --- misc classes
+
+.square
+	width 100%
+	position relative
+	&:after
+		content ''
+		display block
+		padding-bottom 100%
+	.background-image-holder
+		background-size cover
+
+.iframe-container
+	position relative
+	padding-bottom 56.25%
+	padding-top 25px
+	height 0
+	iframe
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+.border-right
+	border-right $border
+.border-bottom
+	border-bottom $border
+.move-up
+	transform: translate(0px, -100px);
+
+.btn > img.arrow-right
+	height 20px
+	position absolute
+	right 10px
+	top 0
+	bottom 0
+	margin auto
+#social-share
+	h1,h2,h3,h4,h5,h6
+		line-height 35px
+.social-icons
+	li
+		display inline-block
+		a
+			transition 0.2s
+			// height 30px
+			// width 30px
+			display block
+			margin 0 5px
+
+			i
+				border 1px solid $gray3
+				color $gray3
+				text-align center
+				height 40px
+				width 40px
+				padding 7px
+				display inline-block
+				font-size 25px
+				margin 0 10px
+				border-radius 999px
+			span
+				color $blue
+				font-size 18px
+#menu-overlay-toggle
+	display none
+	height 100%
+	width 100%
+	position fixed
+	z-index 9
+	background rgba(0,0,0,0.5)
+	transition 0.5s
+	&.custom-toggled-class
+		//display none
+		background rgba(0,0,0,0.0)
+		transition 0.5s
+
+
+.check-mark-before, .check-mark-before-white
+	position relative
+	padding-left 35px
+	&:before
+		content ""
+		width 20px
+		height 20px
+		background-position center right
+		bottom 0
+		top 0
+		left 0px
+		position absolute
+		opacity 1
+		margin auto
+.check-mark-before:before
+	background transparent url("../img/icon/check.png") no-repeat
+	background-size contain
+.check-mark-before-white:before
+	background transparent url("../img/icon/check-white.png") no-repeat
+	background-size contain
+.video-play-icon
+	transition 0.2s
+	position relative
+	&:before
+		border none
+		transition 0.2s
+		content ""
+		width 40%
+		height 40%
+		background transparent url("../img/icon/play.png") no-repeat center center
+		background-size contain
+		bottom 0
+		right -12px
+		top 0
+		left 0
+		position absolute
+		display block
+		opacity 1
+		z-index 5
+		margin auto
+	&:hover
+		background $green
+		border-color $green
+		transition 0.2s
+	&:hover:before
+		background transparent url("../img/icon/play-white.png") no-repeat center center
+		background-size contain
+
+[class*="arrow-after-"]
+	padding-right 50px !important
+[class*="arrow-after-"]:after
+	border none
+	transition 0.2s
+	content ""
+	width 30px
+	height 40%
+	bottom 0
+	right 10px
+	top 0
+	position absolute
+	display block
+	opacity 1
+	z-index 2
+	margin auto
+.arrow-after-white-green
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-green.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+.arrow-after-green-white
+	&:hover:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right-green.png") no-repeat center center
+		background-size contain
+.arrow-after-white-blue
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-blue.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+.arrow-after-blue-white
+	&:hover:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right-blue.png") no-repeat center center
+		background-size contain
+.arrow-after-white-gray
+	&:hover:after
+		background transparent url("../img/icon/arrow-right-gray.png") no-repeat center center
+		background-size contain
+	&:after
+		background transparent url("../img/icon/arrow-right.png") no-repeat center center
+		background-size contain
+[class*="download-before-"]
+	padding-left 50px !important
+[class*="download-before-"]:before
+	border none
+	transition 0.2s
+	content ""
+	width 30px
+	height 40%
+	bottom 0
+	left 10px
+	top 0
+	position absolute
+	display block
+	opacity 1
+	z-index 2
+	margin auto
+.download-before-white-green
+	&:hover:before
+		background transparent url("../img/icon/download-green.png") no-repeat center center
+		background-size contain
+	&:before
+		background transparent url("../img/icon/download-white.png") no-repeat center center
+		background-size contain
+.download-before-green-white
+	&:hover:before
+		background transparent url("../img/icon/download-white.png") no-repeat center center
+		background-size contain
+	&:before
+		background transparent url("../img/icon/download-green.png") no-repeat center center
+		background-size contain
+.download-before-white-blue
+	&:hover:before
+		background transparent url("../img/icon/download-blue.png") no-repeat center center
+		background-size contain
+	&:before
+		background transparent url("../img/icon/download-white.png") no-repeat center center
+		background-size contain
+.download-before-blue-white
+	&:hover:before
+		background transparent url("../img/icon/download-white.png") no-repeat center center
+		background-size contain
+	&:before
+		background transparent url("../img/icon/download-blue.png") no-repeat center center
+		background-size contain
+.download-before-white-gray
+	&:hover:before
+		background transparent url("../img/icon/download-gray.png") no-repeat center center
+		background-size contain
+	&:before
+		background transparent url("../img/icon/download-white.png") no-repeat center center
+		background-size contain
+
+.custom-close-button
+	cursor pointer
+	position fixed
+	top 20px
+	right 20px
+	z-index 1000
+	p
+		margin-right 40px
+	&:after
+		content ""
+		border none
+		transition 0.2s
+		width 30px
+		height 30px
+		top 0
+		right 0
+		position absolute
+		display block
+		opacity 1
+		z-index 9
+		padding-left 30px
+		margin auto
+		background transparent url("../img/icon/close.png") no-repeat center center
+		background-size contain
+
+
+
+//-- overlap classes
+[class*="shift-"]
+	position relative
+.shift-up
+	top -90px
+	margin-bottom -90px
+
+
+
+
+// --- colors
+a
+	color $green
+	&:hover
+		color $blue
+::selection
+	background $blue /* WebKit/Blink Browsers */
+	color $white
+
+::-moz-selection
+	background: $blue /* Gecko Browsers */
+	color $white
+.bg-gradient
+	for key, value in $greengradient
+		{key}:value
+.signature-container
+	height 100%
+	width 100%
+	display block
+	position absolute
+	top 0
+	left 0
+	z-index 1 !important
+.signature-container:before
+	content ""
+	width 100%
+	height 100%
+	//min-width 800px
+	background transparent url("../img/logo/vassig-white.png") no-repeat
+	background-size contain
+	background-position top left
+	top -9%
+	left -5%
+	position absolute
+	display block
+	opacity .3
+	transform translate(0,-14vh)
+[data-overlay]:before
+	for key, value in $greengradient2
+		{key}:value
+	z-index 1
+
+
+
+
+
+
+
+// --- buttons
+
+.btn, button
+	border-radius 999px
+	white-space normal
+	padding 0 20px
+
+// --- white on gray
+.btn-white-gray,
+.btn-white-gray:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn-white-gray .btn__text,
+.btn-white-gray:visited .btn__text
+	color #fff
+
+.btn-white-gray .btn__text i,
+				.btn-white-gray:visited .btn__text i
+	color #fff
+
+.btn-white-gray
+	&:hover
+		background $white
+		border-color $gray !important
+		.btn__text
+			color $gray
+	&:active
+		background $white
+
+
+
+// --- white on blue
+.btn-white-blue,
+.btn-white-blue:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn-white-blue .btn__text,
+.btn-white-blue:visited .btn__text
+	color #fff
+
+.btn-white-blue .btn__text i,
+				.btn-white-blue:visited .btn__text i
+	color #fff
+
+.btn-white-blue
+	&:hover
+		background $white
+		border-color $blue !important
+		.btn__text
+			color $blue
+	&:active
+		background $white
+
+
+
+// --- white on green
+.btn-white-green,
+.btn-white-green:visited
+	background rgba(0,0,0,0.0)
+	border-color $white
+
+.btn-white-green .btn__text,
+.btn-white-green:visited .btn__text
+	color #fff
+
+.btn-white-green .btn__text i,
+				.btn-white-green:visited .btn__text i
+	color #fff
+
+.btn-white-green
+	&:hover
+		background $white
+		border-color $green !important
+		.btn__text
+			color $green
+	&:active
+		background $white
+
+
+// --- green on white
+.btn-green-white,
+.btn-green-white:visited
+	background rgba(0,0,0,0.0)
+	border-color $green
+
+.btn-green-white .btn__text,
+.btn-green-white:visited .btn__text
+	color $green
+
+.btn-green-white .btn__text i, .btn-green-white:visited .btn__text i
+	color $green
+
+.btn-green-white
+	&:hover
+		background $green
+		border-color $white !important
+		.btn__text
+			color $white
+	&:active
+		background $green
+
+
+// --- blue on white
+.btn-blue-white,
+.btn-blue-white:visited
+	background rgba(0,0,0,0.0)
+	border-color $blue !important
+
+.btn-blue-white .btn__text,
+.btn-blue-white:visited .btn__text
+	color $blue
+
+.btn-blue-white .btn__text i, .btn-blue-white:visited .btn__text i
+	color $blue
+
+.btn-blue-white
+	&:hover
+		background $blue
+		border-color $white !important
+		.btn__text
+			color $white
+	&:active
+		background $blue
+
+
+
+
+.btn-circle
+	border-radius 999px
+	padding 20px !important
+	transition padding 0s
+
+
+
+
+
+
+
+// --- header
+.dropdown__content
+	border-radius 0 !important
+	//box-shadow none !important
+	li
+		padding 10px 20px
+	a
+		padding 10px 20px
+#menu1
+	width auto
+	float none !important
+	padding-top 10px
+header
+	height $headerHeight
+	background $white
+	position fixed
+	z-index 10
+	width 100%
+	// div
+	// 	position relative
+	// 	height 100%
+	a.logo
+		height 75px
+		position absolute
+		z-index 5
+		top 0
+		bottom 0
+		margin auto
+		.logo
+			height 75px
+
+
+	.nav-container
+		height 100%
+
+	nav
+		.currentPage
+			color $gray !important
+		#mini-menu
+			a, .language
+				text-transform none
+				opacity 1
+				color $gray3
+				transition .2s
+				font-size 15px
+				line-height inherit
+				font-weight 600
+				&:hover, &:active
+					color $blue
+					transition .2s
+		#mega-menu
+			a
+				text-transform none
+				opacity 1
+				color $gray3
+				transition .2s
+				font-size 16px
+				line-height inherit
+				font-weight 600
+				&:hover
+					color $gray2
+					transition .2s
+	#mega-menu
+		position relative
+		top 20px
+	#mini-menu
+		position relative
+		top -30px
+
+
+
+// --- Footer
+
+
+
+
+// --- main content area
+body
+	background $white
+.content
+	padding-top $headerHeight
+	background $white
+
+
+
+
+
+
+// --- queries
+@media (max-width:990px)
+	.menu-horizontal
+		li
+			display inline-block
+			margin-right 15px
+@media (max-width:767px)
+	.custom-toggled-class
+		right -100vw !important
+		transition 0.5s
+	#menu-overlay-toggle
+		display block !important
+	.content
+		padding-top 56px
+	.col-img-fix
+		position relative
+		min-height 300px
+		margin 15px 0
+	#updates-section
+		margin-top -25px
+	header
+		height 56px
+		a.logo
+			height 40px
+			img
+				height 100% !important
+		.stack-interface
+			margin-top 5px
+		#mega-menu
+
+			top 0 !important
+			li
+				font-size 22px
+				margin 0 0 10px 0
+				padding 3px 20px
+		#mini-menu
+
+			top 0 !important
+			li
+				font-size 18px
+				margin 0 0 10px 0
+				padding 3px 20px
+		.dropdown__trigger
+			font-size 15px
+		#language-dropdown
+			li
+				padding 5px 0px
+				margin 0
+			right 0
+			left initial !important
+			transition 0.5s
+			position fixed
+			width 65%
+			@media (max-height:475px)
+				bottom 0
+				top initial
+
+
+	#menu1
+		width 75%
+		position absolute
+		right 0
+		transition 0.5s
+		padding-top 0px
+		//height 90vh
+		overflow-y auto
+		overflow-x hidden
+	.logo-mobile
+		margin-left 10px !important
+	.stack-menu
+		margin 25px 0px 0px 0px
+	.menu-horizontal
+		li
+			display block
+			margin-top 15px
