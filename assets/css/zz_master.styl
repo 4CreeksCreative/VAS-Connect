@@ -784,3 +784,276 @@ body
 		li
 			display block
 			margin-top 15px
+
+
+
+*
+	box-sizing border-box
+
+body
+	font-size 1.4em
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	font-family 'uni_neue', 'Helvetica', 'Arial', sans-serif
+	font-weight 600
+
+body, html
+	font-size 18px
+	padding 0
+	margin 0
+
+#hero
+	width 100%
+	min-height 500px
+	overflow hidden
+
+.hero
+	width 100%
+	min-height 500px
+	z-index 0
+	display block
+	&:before
+		content ''
+		position absolute
+		top 0
+		left 0
+		display block
+		width 100%
+		min-height 500px
+		background linear-gradient(rgba(0, 76, 117, 1) 0%, rgba(1, 62, 96, 1) 100%)
+		z-index 1
+
+.lines
+	opacity 0.7
+	background-image url('/img/illustration_animated.svg')
+	position absolute
+	top 0
+	left 0
+	display block
+	width 100%
+	min-height 500px
+	background-repeat no-repeat
+	background-position center center
+	background-size cover
+	z-index 2
+
+.ctr
+	text-align center
+
+.header-title
+	position absolute
+	top 0
+	left 0
+	display block
+	width 100%
+	z-index 4
+	margin-top 60px
+	padding 0 20px
+	h1
+		color #fff
+		font-size 40px
+		font-weight 700
+		margin-bottom 20px
+		line-height 1.1em
+		.h1-sub
+			font-weight 500
+			display block
+	h2
+		line-height 1.3em
+		margin 0 auto
+		font-size 18px
+		color #00A1E4
+		font-weight 600
+		max-width 500px
+		margin-bottom 40px
+
+.info-date
+	color #9ABA4D
+	font-weight 700
+	font-size 30px
+
+.info-location
+	color #fff
+	font-size 24px
+
+.carousel
+	position relative
+
+.main-carousel
+	overflow hidden
+
+.carousel-cell
+	width 80%
+	position relative
+
+.carousel-cell-image
+	width 100%
+
+.carousel-cell-content
+	color #fff
+	background-color #004C75
+	padding-top 20px
+	padding-bottom 20px
+	padding-left 15%
+	padding-right 15%
+	position relative
+	z-index 2
+	margin-top -40px
+	opacity 0
+	transform translate3d(0, 100px, 0)
+	transition opacity 500ms cubic-bezier(0.55, 0, 0.1, 1), transform 500ms cubic-bezier(0.55, 0, 0.1, 1)
+	h3
+		font-size 22px
+		margin-bottom 10px
+	p
+		font-size 16px
+		line-height 24px
+
+.carousel-cell, .carousel-cell-image
+	min-height 225px
+
+.is-selected
+	.carousel-cell-content
+		opacity 1
+		transform translate3d(0, 0, 0)
+
+.flickity-enabled
+	&.is-draggable
+		.flickity-viewport
+			cursor move
+			cursor -webkit-grab
+			cursor grab
+			&.is-pointer-down
+				cursor -webkit-grabbing
+				cursor grabbing
+
+.flickity-prev-next-button
+	position absolute
+	z-index 4
+	top calc( 50% - 100px )
+	width 60px
+	height 60px
+	border none
+	border-radius 50%
+	background transparent
+	cursor pointer
+	-webkit-transform translateY(-50%)
+	transform translateY(-50%)
+	outline none
+	&:hover
+		background transparent
+		.arrow
+			fill #00A1E4
+	&:focus
+		outline none
+		box-shadow 0 0 0 5px #09F
+	&:active
+		opacity 1
+	&.previous
+		display none
+	&.next
+		right calc( 25% - 88px )
+	&:disabled
+		opacity 0.3
+		cursor auto
+	svg
+		position absolute
+		left 20%
+		top 20%
+		width 60%
+		height 60%
+	.arrow
+		fill #fff
+
+.flickity-rtl
+	.flickity-prev-next-button
+		&.previous
+			left auto
+			right 10px
+		&.next
+			right auto
+			left 10px
+
+@media screen and (min-width: 490px)
+	.lines, .hero,#hero,.hero:before
+		min-height 450px
+
+@media screen and (min-width: 490px)
+	.header-title
+		margin-top 80px
+		h2
+			margin-bottom 40px
+	.carousel-cell
+		width 75%
+
+@media screen and (min-width: 490px)
+	.carousel-cell, .carousel-cell-image
+		min-height 300px
+
+@media screen and (min-width: 760px)
+	.lines, .hero,#hero,.hero:before
+		min-height 650px
+
+@media screen and (min-width: 760px)
+	.header-title
+		margin-top 100px
+		h2
+			margin-bottom 60px
+		h1
+			font-size 55px
+			.h1-sub
+				display inline-block
+
+@media screen and (min-width: 760px)
+	.carousel-cell, .carousel-cell-image
+		min-height 500px
+
+@media screen and (min-width: 1100px)
+	.header-title
+		h1
+			font-size 70px
+
+.btn
+	display inline-block
+	justify-content center
+	vertical-align bottom
+	text-transform uppercase
+	cursor pointer
+	padding 7px 14px 7px
+	font-size 12px
+	line-height 1
+	font-weight 700
+	border-radius 5px
+	background-color transparent
+	border 2px solid #000
+	color #000
+	text-decoration none
+	margin-right 10px
+	margin-bottom 10px
+	-webkit-transition all 0.1s ease-in-out 0s
+	transition all 0.1s ease-in-out 0s
+	outline none
+	&.medium
+		padding 9px 18px 9px
+		font-size 14px
+	&.large
+		padding 13px 26px 13px
+		font-size 16px
+	&.blue
+		border 2px solid #00A1E4
+		color #00A1E4
+		&:hover
+			background-color #00A1E4
+		&:active
+			border-color #0D8DC3
+			background-color #0D8DC3
+	&.green
+		border 2px solid #9ABA4D
+		color #86A340
+		&:hover
+			background-color #9ABA4D
+		&:active
+			border-color #88A14A
+			background-color #88A14A
+	&:hover
+		color #fff
