@@ -3,7 +3,21 @@ extends layout
 block content
 	.content
 		section#hero.pos-relative.height-70.unpad
-			.slider(data-arrows='false', data-paging='false')
+			.header-title
+				h1.ctr
+					| Connect &lsquo;18 
+					span.h1-sub A DairyTech Summit
+			
+				h2.ctr
+					| Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
+			
+				.info-date.ctr June 25&ndash;27, 2018
+			
+				.info-location.ctr Park Hyatt Resort, Beaver Creek, Colorado
+			.hero
+			.lines
+
+			//-.slider(data-arrows='false', data-paging='false')
 				ul.slides
 					li.height-80.unpad.imagebg.parallax
 						.background-image-holder
@@ -12,7 +26,7 @@ block content
 						.background-image-holder
 							img(src="/img/test.jpg")
 
-			.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
+			//-.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
 				.row.text-center
 					.col-sm-12
 						h1.color-white
@@ -44,7 +58,67 @@ block content
 							These are some of the keynote speakers you will see on stage
 						a.btn(href="#")
 							span.btn__text View our program
-		section
+		
+		section.carousel
+			.main-carousel
+				.carousel-cell
+					.carousel-cell-image(style="background:url('/img/slider-image-1.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+					.carousel-cell-content
+						h3 Mike Rowe
+						p
+							| Mike Rowe is a TV host, writer, narrator, producer, actor and spokesman. He&rsquo;s well known for lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+				.carousel-cell
+					.carousel-cell-image(style="background:url('/img/slider-image-2.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+					.carousel-cell-content
+						h3 Mike Rowe
+						p
+							| Mike Rowe is a TV host, writer, narrator, producer, actor and spokesman. He&rsquo;s well known for lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ed do.
+
+				.carousel-cell
+					.carousel-cell-image(style="background:url('/img/slider-image-1.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+					.carousel-cell-content
+						h3 Mike Rowe
+						p
+							| Mike Rowe is a TV host, writer, narrator, producer, actor and spokesman sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		script.
+			$(document).ready(function(){
+					
+
+				var $carousel = $('.main-carousel').flickity({
+					// options
+					cellAlign: 'left',
+					contain: false,
+					wrapAround: true,
+					selectedAttraction: 0.05,
+					friction: 0.5,
+					pageDots: false,
+					accessibility: false,
+					adaptiveHeight: true,
+					arrowShape: { 
+					  x0: 10,
+					  x1: 60, y1: 50,
+					  x2: 65, y2: 45,
+					  x3: 20
+					}
+				});
+				if($('.main-carousel').length) {
+					//carousel exists, set arrow position
+					var carouselImageHeight = $('.carousel-cell-image').height();
+					$('.flickity-prev-next-button').css('top', (carouselImageHeight / 2));
+				}
+
+				/*
+				var flkty = $carousel.data('flickity');
+					$carousel.on( 'settle.flickity', function() {
+					  console.log( 'Flickity settled at ' + flkty.selectedIndex )
+					})
+				*/
+
+				});
+
+
+		//-section
 			.row
 				.slider(data-arrows='true', data-paging='false')
 					ul.slides.row
