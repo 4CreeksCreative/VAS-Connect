@@ -2,7 +2,7 @@
 
 //normalize-css()
 //base()
-$headerHeight = 100px
+$headerHeight = 120px
 $border = 1px $bordergray solid
 
 
@@ -890,7 +890,8 @@ body, html
 	width 100%
 
 .carousel-cell-content
-	color #fff
+	h1,h2,h3,h4,h5,h6,span,p
+		color #fff
 	background-color #004C75
 	padding-top 20px
 	padding-bottom 20px
@@ -1041,7 +1042,8 @@ body, html
 		font-size 16px
 	&.blue
 		border 2px solid #00A1E4
-		color #00A1E4
+		.btn__text
+			color #00A1E4
 		&:hover
 			background-color #00A1E4
 		&:active
@@ -1049,11 +1051,13 @@ body, html
 			background-color #0D8DC3
 	&.green
 		border 2px solid #9ABA4D
-		color #86A340
+		.btn__text
+			color #86A340
 		&:hover
 			background-color #9ABA4D
 		&:active
 			border-color #88A14A
 			background-color #88A14A
 	&:hover
-		color #fff
+		.btn__text
+			color #fff
