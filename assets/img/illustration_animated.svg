@@ -1,0 +1,26 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" style="">
+  <g fill="none" fill-rule="evenodd" stroke-width="1.5">
+    <path stroke="#00A0E3" d="M1614.38978,-251.228243 C1348.94844,-260.954737 847.198574,-282.525739 339.793088,-14.3108309 C-56.827715,195.336035 226.153317,487.36722 709.954319,368.731256 C785.473815,350.219539 1094.77223,280.326041 1397.33926,85.7320612 C1566.35116,-22.9668273 1733.26269,-170.575564 1856.15389,-369.873297 C2261.0399,-1026.50259 1217.03247,-906.12131 759,-377 C357.214579,87.1537799 976.668625,557.916122 976.668625,557.916122 C1119.54956,678.439994 1238.96778,761.14702 1331.34863,836.260848 C1405.01662,896.159467 2038.73044,-212.561974 1627.24635,-250.409034 L1614.38978,-251.228243 Z" class="aCBSBKEQ_0"></path>
+    <path stroke="#99BA4D" d="M1210.43328,609.813596 C1048.11563,903.455307 807.74944,957.192875 658.54369,837.620589 C432.367417,656.37123 -89.90072,270.018296 395,-291 C947.775961,-930.557819 2198.3055,-1081.98034 1723.48226,-279.946534 C1592.17162,-58.1441402 1312.67735,424.838347 1210.43328,609.813596 Z" class="aCBSBKEQ_1"></path>
+    <path stroke="#FFC10E" d="M1142.07997,1463.95216 C969.437182,1438.16119 793.113136,1409.32524 619.341564,1377.27176 C-37.0101789,1256.21354 -358.987913,807.068979 88,426 C703.878261,-99.055888 1534.76427,203.320682 1474.80657,720.165276 C1448.8954,943.52464 1320.38701,1155.30293 1146.51375,1456.28896 L1142.07997,1463.95216 Z" class="aCBSBKEQ_2"></path>
+  </g>
+<style>
+	.aCBSBKEQ_0{
+		stroke-dasharray:8197 8199;
+		stroke-dashoffset:8198;
+		animation:aCBSBKEQ_draw_0 8000ms linear 0ms infinite,aCBSBKEQ_fade 8000ms linear 0ms infinite;
+	}.aCBSBKEQ_1{
+		stroke-dasharray:5115 5117;
+		stroke-dashoffset:5116;
+		animation:aCBSBKEQ_draw_1 5000ms linear 0ms infinite,aCBSBKEQ_fade 5000ms linear 0ms infinite;
+	}.aCBSBKEQ_2{
+		stroke-dasharray:4579 4581;
+		stroke-dashoffset:4580;
+		animation:aCBSBKEQ_draw_2 6000ms linear 0ms infinite,aCBSBKEQ_fade 6000ms linear 0ms infinite;
+	}
+	@keyframes aCBSBKEQ_draw{100%{stroke-dashoffset:0;}}
+	@keyframes aCBSBKEQ_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}
+	@keyframes aCBSBKEQ_draw_0{11.11111111111111%{stroke-dashoffset: 8198}52.77777777777778%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}
+	@keyframes aCBSBKEQ_draw_1{11.11111111111111%{stroke-dashoffset: 5116}52.77777777777778%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}
+	@keyframes aCBSBKEQ_draw_2{11.11111111111111%{stroke-dashoffset: 4580}52.77777777777778%{ stroke-dashoffset: 0;}100%{ stroke-dashoffset: 0;}}</style></svg>
