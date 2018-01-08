@@ -1,12 +1,24 @@
-footer#footer.corner-point-brown
+footer#footer.corner-point-brown.unpad--top
+	section#dont-miss-a-thing
+		.container.bg-blue
+			.row.text-center
+				.col-sm-12
+					h4.color-white Don't miss a thing
+					p.color-white Sign up to recieve the latest announcements, tips and more.
+			.row.text-center.mt--1
+				.col-sm-5
+					input(type="text" placeholder="Your name" style="display:inline-block;")
+				.col-sm-5
+					input(type="text" placeholder="E-mail address" style="display:inline-block;")
+				.col-sm-2
+					a.btn.white.medium(href="")
+						span.btn__text SUBMIT
 	section
 		.container
 			.row
 				.col-sm-6
-					img(src="/img/logo/logo-gray.png" style="height:100px;")
-					h3 JUNE 25-27 2018
-					h3 Park Hyatt Resort, Beaver Creek, Colorado
-				.col-sm-6
+					img(src="/img/logo/logo-color.png" style="height:100px;")
+				.col-sm-6.mt--1
 					ul.social-icons
 						li.facebook
 							a(href="#")
@@ -14,19 +26,24 @@ footer#footer.corner-point-brown
 						li.twitter
 							a(href="#")
 								i.fa.fa-twitter
+			.row.mt--1
+				.col-sm-6
+					h4.unmarg JUNE 25-27 2018
+					h4(style="font-weight:500;") Park Hyatt Resort, Beaver Creek, Colorado
+				.col-sm-6
 					p.
 						For registration or other questions please contact us at 559-686-9496 (8am–5pm PT, Monday–Friday) or email registration@connectdairy.com
 	section
 		.container
 			.row.text-center
 				.col-sm-12.mb--1
-					h3 Partners and Sponsors
+					h2 Supported by
 			.row.text-center
 				.slider(data-arrows="false" data-pagin="false")
-					ul.slides.row
+					ul#sponsors.slides.row
 						li.imagebg.col-sm-3.height-20
 							.background-image-holder
-								img(src="/img/test.jpg")
+								img(src="/img/sponsors/vasLogo-white.png")
 						li.imagebg.col-sm-3.height-20
 							.background-image-holder
 								img(src="/img/test.jpg")
@@ -40,5 +57,5 @@ footer#footer.corner-point-brown
 							.background-image-holder
 								img(src="/img/test.jpg")
 				.col-sm-12.mt--2
-					a.btn.blue.medium(href="#")
+					a.btn.white.large(href="#")
 						span.btn__text BECOME A SPONSOR
