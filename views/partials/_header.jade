@@ -6,7 +6,7 @@ header
 				.row(style="height:100%;")
 					.float-left(style="height:100%;")
 						a.logo.logo-mobile(href='/')
-							img.logo(alt='logo', src='/img/logo/logo-gray.png')
+							img.logo(alt='logo', src='/img/logo/logo-color.png')
 							
 					.float-right.col-xs-9.col-sm-10.text-right(style="height:100%;")
 						a.hamburger-toggle.toggle-custom(href='#', data-toggle-class='#menu-overlay-toggle,#menu1;custom-toggled-class')
@@ -15,19 +15,19 @@ header
 		nav#menu1.custom-toggled-class
 			.container(style="padding:0px;")
 				a(href='/').float-left.hidden-xs.logo
-					img.logo(alt='logo', src='/img/logo/logo-gray.png')
+					img.logo(alt='logo', src='/img/logo/logo-color.png')
 				
 
 				#mega-menu.row
-					.col-sm-11.col-xs-12.text-right.text-right-xs.float-right.float-right-xs.bg--white
+					.col-sm-11.col-xs-12.text-right.text-right-xs.float-right.float-right-xs
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-xs
 								//-li
 									a(href="#")= contentful.Navigation[0].solutions
 								li
-									a(href="#") MISSION
+									a(href="/vision") VISION
 								li
-									a(href="#") PROGRAM
+									a(href="/program") PROGRAM
 								li
 									a(href="#") SPEAKERS
 								li
@@ -39,5 +39,5 @@ header
 								li
 									a(href="#") HELP
 								li
-									a.btn(href="#")
+									a.unmarg.btn.yellow(href="#")
 										span.btn__text MAKE YOUR RESERVATION
