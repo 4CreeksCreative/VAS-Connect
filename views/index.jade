@@ -2,20 +2,20 @@ extends layout
 
 block content
 	.content
-		section#hero.pos-relative.height-70.unpad
-			.header-title
-				h1.ctr
-					| Connect &lsquo;18 
-					span.h1-sub A DairyTech Summit
-			
-				h2.ctr
-					| Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
-			
-				.info-date.ctr June 25&ndash;27, 2018
-			
-				.info-location.ctr Park Hyatt Resort, Beaver Creek, Colorado
-			.hero
-			.lines
+		section#hero.home.pos-relative
+			.hero.height-50
+				.header-title
+					h1.ctr
+						| Connect '18
+						span.h1-sub A DairyTech Summit
+				
+					h2.ctr
+						| Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
+				
+					.info-date.ctr June 25-27, 2018
+				
+					.info-location.ctr Park Hyatt Resort, Beaver Creek, Colorado
+				.lines
 
 			//-.slider(data-arrows='false', data-paging='false')
 				ul.slides
@@ -43,20 +43,27 @@ block content
 							iframe.youtube(src="https://www.youtube.com/embed/pmCjKO4pD4A" allow="encrypted-media" allowfullscreen)
 				.row.text-center.mt--2
 					.col-sm-12
-						h1 Intelligence at the heart of your dairy
-						h6 In an ever changing industry, what steps do you need to take to survive and thrive in the digital era.
-						p.
+						h2.color-green Intelligence at the heart of your dairy
+						h5 In an ever changing industry, what steps do you need to take to survive and thrive in the digital era.
+						h6.
 							Connect engages dairy leaders with trending and thought-provoking discussions to discover practical technology applications, best practices and the clearest path to transforming the way they do business.
-						a.btn.blue.medium(href="#")
+						a.btn.green.medium(href="#")
 							span.btn__text READ ABOUT OUR MISSION
+		section.mt--3.bg-gray2
+			.container
+				.row
+					.col-sm-8
+						h4.color-blue Connect'18 Event App available
+						p.
+							Download the HelloCrowd app now - available for iOS and Android! #[a(href="#") learn how it works!]
 		section.mt--3
 			.container
 				.row.text-center
 					.col-sm-12
-						h1 Get inspired
-						p.
+						h1.color-blue Get inspired
+						h6.unmarg.
 							These are some of the keynote speakers you will see on stage
-						a.btn.blue.medium(href="#")
+						a.btn.blue.large.mt--1(href="#")
 							span.btn__text View our program
 		
 		section.carousel
@@ -150,10 +157,10 @@ block content
 			.container
 				.row.text-center
 					.col-sm-12
-						h1 Park Hyatt Resort, Beaver Creek, CO
-						p.
+						h1.color-green Park Hyatt Resort, Beaver Creek, CO
+						h6.
 							Introduction of this beautiful location and possible activities. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						a.btn.blue.medium(href="#")
+						a.btn.green.large(href="#")
 							span.btn__text MORE ABOUT THIS LOCATION
 			#gallery.mt--2
 				ul.row
@@ -175,70 +182,55 @@ block content
 					li.col-sm-4.imagebg.height-30
 						a.background-image-holder(href="/img/test.jpg" data-lightbox="gallery 1")
 							img(src="/img/test.jpg")
-		section
+		section#reasons-to-attend
 			.container
 				.row.text-center.mb--2
 					.col-sm-12
-						h1 6 reasons why you should attend
+						h1.color-blue 6 reasons why you should attend
 				.row.text-center
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
 					.col-sm-4.mb--2
-						.imagebg.square.mb--1
+						.imagebg.round.mb--1
 							.background-image-holder
 								img(src="/img/test.jpg")
-						h4 Dairy Talks
+						h4.color-blue Dairy Talks
 						p.
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-				.row.text-center
-					.col-sm-12
-						a.btn.blue.medium(href="")
-							span.btn__text MAKE YOUR RESERVATION
-							
-		section.bg-gray.mt--3
-			.container
 				.row.text-center
 					.col-sm-12
-						h4.color-white Don't miss a thing
-						p.color-white Sign up to recieve the latest announcements, tips and more.
-				.row.text-center.mt--1
-					.col-sm-5
-						input(type="text" placeholder="Your name" style="display:inline-block;")
-					.col-sm-5
-						input(type="text" placeholder="E-mail address" style="display:inline-block;")
-					.col-sm-2
-						a.btn.blue.medium(href="")
-							span.btn__text SUBMIT
+						a.btn.blue.large(href="")
+							span.btn__text CLAIM YOUR SEAT
