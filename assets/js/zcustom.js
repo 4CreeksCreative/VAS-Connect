@@ -1,3 +1,13 @@
+var agendaOffset = $('#agenda').offset().top
+$(document).on('scroll', function(){
+	console.log($('#agenda').offset().top)
+	if(agendaOffset <= $(document).scrollTop() && !$('#agenda').hasClass('sticky')){
+		$('#agenda').addClass('sticky');
+	}
+	else if (agendaOffset >= $(document).scrollTop() && $('#agenda').hasClass('sticky')){
+		$('#agenda').removeClass('sticky');
+	}
+})
 $(document).on('scroll', function(){
 	if($(document).scrollTop() > 300 && !$('header').hasClass('sticky')){
 		$('header').addClass('sticky');
