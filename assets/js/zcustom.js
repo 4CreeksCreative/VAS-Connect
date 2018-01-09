@@ -14,5 +14,16 @@ $(document).on('click', '#events .event .arrow', function(){
 	else {
 		event.addClass('active').find('.event-description').slideToggle()
 	}
-	
+})
+$(document).on('click', '#day2-show', function(){
+	$("#day2").find('.event').toggleClass('active')
+	$("#day2").find('.event-description').slideToggle()
+})
+$(document).on('click', '#day1-show', function(){
+	$('#day1').find('.event').toggleClass('active')
+	$("#day1").find('.event-description').slideToggle()
+})
+$(document).on('click', '#day3-show', function(){
+	$('#day3').find('.event').toggleClass('active')
+	$("#day3").find('.event-description').slideToggle()
 })
