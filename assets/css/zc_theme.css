@@ -1367,7 +1367,7 @@ ul:last-child {
         }
 
             .menu-horizontal > li:not(:last-child) {
-                margin-right: 20px;
+                margin-right: 12px;
             }
 
     .menu-vertical {
@@ -4256,13 +4256,15 @@ div[class*='col-'] > div[class*='col-']:last-child {
         margin-bottom: 5.57142857em;
     }
 @media all and (max-width: 990px) {
-    .mt--1,
+    .mt--1{
+		margin-top:1.85714286em;
+	}
     .mt--2 {
-        margin-top: 1.85714286em;
+        margin-top: 3.71428571em;
     }
 
     .mt--3 {
-        margin-top: 2.78571429em;
+        margin-top: 5.57142857em;
     }
 }
 
