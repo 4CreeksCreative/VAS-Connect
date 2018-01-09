@@ -148,3 +148,14 @@ block content
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 						.float-right
 							.arrow
+	script.
+		var agendaOffset = $('#agenda').offset().top
+		$(document).on('scroll', function(){
+			console.log($('#agenda').offset().top)
+			if(agendaOffset <= $(document).scrollTop() && !$('#agenda').hasClass('sticky')){
+				$('#agenda').addClass('sticky');
+			}
+			else if (agendaOffset >= $(document).scrollTop() && $('#agenda').hasClass('sticky')){
+				$('#agenda').removeClass('sticky');
+			}
+		})
