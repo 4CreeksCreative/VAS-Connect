@@ -19,6 +19,22 @@ h3,h4,h5,h6
 p,a,input,textarea,select,option,span,li
 	font-weight 600
 
+textarea, input[type]
+	border-radius 0px
+	border-bottom $darkBlue 2px solid
+	border-top none
+	border-right none
+	border-left none
+body
+	.content
+		position relative
+	.content,header
+		right 0
+		transition 0.5s
+body.custom-toggled-class
+	.content,header
+		right 80vw
+		transition 0.5s
 .uppercase
 	text-transform uppercase
 .small
@@ -31,6 +47,9 @@ h1
 		line-height 40px
 h2
 	font-size 48px
+	@media (max-width:767px)
+		font-size 32px
+		line-height 36px
 h3
 	font-size 30px
 	line-height 34px
@@ -56,6 +75,9 @@ p > a
 	color inherit
 	font-weight 600
 	&:hover
+		color $blue
+h1,h2,h3,h4,h5,h6,p
+	a
 		color $blue
 
 #blog-content, #about-content, section>.container>.row
@@ -122,6 +144,12 @@ section
 
 
 // --- fixes
+[class*="col-"]
+	a.btn
+		display inline-block
+.container
+	@media (min-width: 1300px)
+		width 1200px
 .dropdown__content
 	padding 0 !important
 section.imagebg.parallax
@@ -144,8 +172,35 @@ p i
 .col-img-fix
 	position absolute
 	height 100%
-.hamburger-toggle i
-	color $gray3
+.hamburger-toggle
+	display block
+	position relative
+	height 25px
+	width 22px
+	top 17px
+	right 10px
+	margin-left 22px
+	float right
+.hamburg
+	position relative
+	top 12px
+.hamburg span, .hamburg span:before, .hamburg span:after
+	//top 10px
+	cursor pointer
+	border-radius 1px
+	height 2px
+	width 22px
+	background white
+	position relative
+	display block
+	content ''
+
+.hamburg span:before
+	top -8px
+.hamburg span:after
+	bottom -6px
+
+
 #language-dropdown
 	box-shadow $box-shadow
 .language-dropdown
@@ -179,6 +234,16 @@ textarea
 
 
 // --- misc classes
+.fa-times-thin:before
+	content '\00d7'
+
+.closeX
+	color $white
+	position absolute
+	top 8px
+	right 25px
+	font-size 40px
+	cursor pointer
 .arrow-down
 	box-sizing border-box
 	height 20px
@@ -209,7 +274,7 @@ textarea
 	.background-image-holder
 		background-size cover
 .round
-	width 100%
+	//width 100%
 	position relative
 	&:after
 		content ''
@@ -728,11 +793,16 @@ header
 				&:hover
 					color $gray2
 					transition .2s
+			h1,h2,h3,h4,h5,h6,p
+				a
+					color $blue
 	#mega-menu
 		position relative
 		top 20px
 		ul.menu-horizontal
 			line-height 50px
+			@media (max-width:992px)
+				line-height 25px
 			a.btn
 				padding 0 20px
 	#mini-menu
@@ -751,6 +821,8 @@ footer
 		margin-bottom -200px
 	h1,h2,h3,h4,h5,h6,p
 		color $white
+	@media (max-width:767px)
+		text-align center
 
 
 
@@ -764,20 +836,54 @@ body
 		padding-top $headerHeight
 
 #reasons-to-attend
+	.reason
+		margin-bottom 50px
+		position relative
+		@media (max-width:767px)
+			margin-bottom 20px
 	.imagebg
-		height 150px
-		width 150px
+		max-height 150px
 		text-align center
-		margin-left auto
-		margin-right auto
+		.background-image-holder
+			position absolute
+			left 0
+			right 0
+			top auto
+			bottom 0
+			height 150px
+			width 150px
+			margin-left auto
+			margin-right auto
+		@media (max-width: 767px)
+			position absolute
+			left 0
+			right 0
+			top 0
+			bottom 0
+			text-align left
+			margin inherit
+			.background-image-holder
+				top 0
+				max-height 75px
+				max-width 75px
+				margin auto
 #dont-miss-a-thing
 	.container
 		padding 25px 50px
+	@media (max-width:767px)
+		padding 0 15px
+		.container
+			padding 25px
+			a.btn, input
+				margin-top 20px
 #sponsors
 	.background-image-holder
 		background-size contain !important
 		background-repeat no-repeat !important
-		padding 20px
+		//padding 20px
+		@media (max-width:767px)
+			height auto
+			min-height 100px
 
 
 
@@ -871,14 +977,21 @@ body
 		li
 			display inline-block
 			margin-right 15px
-@media (max-width:767px)
-	.custom-toggled-class
-		right -100vw !important
+@media (max-width:992px)
+	#menu1
+		right -80vw !important
 		transition 0.5s
+		position absolute
+		height 100vh
+		width 100vw
+		background $blueGradient
+		top 0
+		.container
+			padding 50px 25px
 	#menu-overlay-toggle
 		display block !important
 	.content
-		padding-top 56px
+		//padding-top 56px
 	.col-img-fix
 		position relative
 		min-height 300px
@@ -886,9 +999,9 @@ body
 	#updates-section
 		margin-top -25px
 	header
-		height 56px
+		height 60px
 		a.logo
-			height 40px
+			height 55px
 			img
 				height 100% !important
 		.stack-interface
@@ -924,7 +1037,7 @@ body
 
 
 	#menu1
-		width 75%
+		width 80vw
 		position absolute
 		right 0
 		transition 0.5s
@@ -933,7 +1046,7 @@ body
 		overflow-y auto
 		overflow-x hidden
 	.logo-mobile
-		margin-left 10px !important
+		margin-left 15px !important
 	.stack-menu
 		margin 25px 0px 0px 0px
 	ul.menu-horizontal
@@ -1011,6 +1124,8 @@ body, html
 	z-index 4
 	margin-top 60px
 	padding 0 20px
+	@media (max-width:760px)
+		margin-top 120px
 	h1
 		color $white
 		font-size 40px
@@ -1065,12 +1180,17 @@ body, html
 	opacity 0
 	transform translate3d(0, 100px, 0)
 	transition opacity 500ms cubic-bezier(0.55, 0, 0.1, 1), transform 500ms cubic-bezier(0.55, 0, 0.1, 1)
+	@media (max-width:760px)
+		padding 20px 15px
 	h3
 		font-size 22px
 		margin-bottom 10px
 	p
 		font-size 16px
 		line-height 24px
+		@media (max-width: 760px)
+			font-size 15px
+			line-height 22px
 
 .carousel-cell, .carousel-cell-image
 	min-height 225px
@@ -1175,7 +1295,9 @@ body, html
 	.header-title
 		h1
 			font-size 70px
-
+@media screen and (min-width: 1600px)
+	.carousel-cell, .carousel-cell-image
+		min-height 700px
 .btn
 	display inline-block
 	justify-content center
