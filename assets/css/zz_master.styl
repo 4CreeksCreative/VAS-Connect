@@ -144,6 +144,9 @@ section
 
 
 // --- fixes
+.not-round
+	border-radius 0px
+	min-height 150px
 [class*="col-"]
 	a.btn
 		display inline-block
@@ -352,6 +355,7 @@ textarea
 	background rgba(0,0,0,0.5)
 	transition 0.5s
 	&.custom-toggled-class
+		z-index 0
 		//display none
 		background rgba(0,0,0,0.0)
 		transition 0.5s
@@ -833,8 +837,10 @@ body
 	padding-top 0//$headerHeight
 	background $white
 	section:first-child
-		padding-top $headerHeight
-
+		@media (max-width:992px)
+			padding-top 60px
+		&.home
+			padding-top 120px
 #reasons-to-attend
 	.reason
 		margin-bottom 50px
@@ -924,6 +930,8 @@ body
 		z-index 2
 		li a
 			margin-bottom 0
+		@media (max-width:992px)
+			top 60px
 	#shortcuts
 		li
 			display inline-block
@@ -947,6 +955,9 @@ body
 			transition transform .2s
 			opacity 0.5
 			transform rotate(-135deg)
+			@media (max-width:992px)
+				position relative
+				right 20px
 			
 	.event.active
 		.arrow
@@ -1077,25 +1088,26 @@ body, html
 
 #hero
 	width 100%
-	min-height 500px
-	overflow hidden
+	background $blueGradient
+	&.home
+		min-height 600px
+	//min-height 500px
+	//overflow hidden
 
 .hero
 	width 100%
-	min-height 500px
 	z-index 0
 	display block
-	&:before
-		height 100%
-		content ''
-		position absolute
-		top 0
-		left 0
-		display block
-		width 100%
-		min-height 500px
-		background $blueGradient
-		z-index 1
+	// &:before
+	// 	height 100%
+	// 	content ''
+	// 	position absolute
+	// 	top 0
+	// 	left 0
+	// 	display block
+	// 	width 100%
+	// 	//min-height 500px
+	// 	z-index 1
 
 .lines
 	opacity 0.7
@@ -1106,26 +1118,25 @@ body, html
 	display block
 	width 100%
 	height 100%
-	min-height 500px
+	//min-height 500px
 	background-repeat no-repeat
 	background-position center center
 	background-size cover
-	z-index 2
-
+	z-index 0
+.home
+	.header-title
+		@media (max-width:767px)
+			padding-bottom 100px
 .ctr
 	text-align center
-
 .header-title
-	position absolute
-	top 0
-	left 0
+	position relative
+	z-index 1
 	display block
 	width 100%
 	z-index 4
-	margin-top 60px
+	margin-top 0px
 	padding 0 20px
-	@media (max-width:760px)
-		margin-top 120px
 	h1
 		color $white
 		font-size 40px
@@ -1258,12 +1269,12 @@ body, html
 			left 10px
 
 @media screen and (min-width: 490px)
-	.lines, .hero,#hero,.hero:before
+	.hero,#hero,.hero:before
 		min-height 450px
 
 @media screen and (min-width: 490px)
 	.header-title
-		margin-top 80px
+		margin-top 30px
 		h2
 			margin-bottom 40px
 	.carousel-cell
@@ -1274,12 +1285,12 @@ body, html
 		min-height 300px
 
 @media screen and (min-width: 760px)
-	.lines, #hero.home,.hero:before
+	#hero.home,.hero:before
 		min-height 650px
 
 @media screen and (min-width: 760px)
 	.header-title
-		margin-top 220px
+		margin-top 60px
 		h2
 			margin-bottom 60px
 		h1
