@@ -237,6 +237,30 @@ textarea
 
 
 // --- misc classes
+#phone
+	padding-top 300px
+	.container
+		padding 50px 0
+		@media (max-width:992px)
+			padding 50px 15px
+	.phoneimg
+		position absolute
+		height 500px
+		bottom 50px
+		right 0
+		left 35%
+		margin auto
+	@media (max-width:1200px)
+		.phoneimg
+			height 400px
+			left 55%
+	@media (max-width:992px)
+		padding-top 200px
+		.phoneimg
+			height 400px
+			left 55%
+	@media (max-width:500px)
+		padding-top 100px
 .fa-times-thin:before
 	content '\00d7'
 
@@ -1224,7 +1248,7 @@ body, html
 .flickity-prev-next-button
 	position absolute
 	z-index 4
-	top calc( 50% - 100px )
+	top calc( 50% - 100px ) !important
 	width 60px
 	height 60px
 	border none
