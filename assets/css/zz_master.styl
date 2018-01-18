@@ -1050,13 +1050,16 @@ body
 				margin-right 15px
 @media (max-width:992px)
 	#menu1
+		display block
 		right -80vw !important
 		transition 0.5s
-		position absolute
+		position fixed
 		height 100vh
 		width 100vw
 		background $blueGradient
 		top 0
+		&.custom-toggled-class
+			display none
 		.container
 			padding 50px 25px
 	#menu-overlay-toggle
