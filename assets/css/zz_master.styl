@@ -67,6 +67,10 @@ h6, label
 	font-size 18px
 	line-height 28px
 	font-weight 600
+h5,h6
+	max-width 670px
+	margin-left auto
+	margin-right auto
 p,button,input,textarea
 	font-size 15px
 	font-weight 600 !important
@@ -244,25 +248,25 @@ textarea
 #phone
 	width 100%
 	overflow-x hidden
-	padding-top 250px
+	padding-top 150px
 	.container
 		padding 50px 0
 		@media (max-width:992px)
-			padding 50px 15px
+			padding 50px 15px 10px 15px
 	.phoneimg
 		position absolute
-		height 500px
+		height 400px
 		bottom 30px
 		right 0
 		left 35%
 		margin auto
 	@media (max-width:1200px)
-		padding-top 130px
+		padding-top 150px
 		.phoneimg
 			height 400px
 			left 55%
 	@media (max-width:992px)
-		padding-top 130px
+		padding-top 150px
 		.phoneimg
 			height 400px
 			left 55%
@@ -270,7 +274,7 @@ textarea
 		padding-top 30px
 	.download-link
 		display inline-block
-		width 200px
+		width 120px
 		&:not(:last-child)
 			margin-right 20px
 		@media (max-width:992px)
@@ -864,8 +868,10 @@ header
 					margin-left 15px
 				h6
 					font-size 16px
-			@media (max-width:992px)
-				line-height 25px
+				@media (max-width:992px)
+					line-height 25px
+					&.header-btn
+						margin-top 20px
 			a.btn
 				padding 0 20px
 	#mini-menu
@@ -901,6 +907,9 @@ body
 		&.home
 			padding-top 120px
 #reasons-to-attend
+	[class*="col-"]
+		padding-left 15px
+		padding-right 15px
 	.reason
 		margin-bottom 50px
 		position relative
@@ -942,11 +951,14 @@ body
 			a.btn, input
 				margin-top 20px
 #sponsors
-	.background-image-holder
+	img
+		max-width 150px
+		margin 0 auto
 		background-size contain !important
 		background-repeat no-repeat !important
 		//padding 20px
 		@media (max-width:767px)
+			max-width 120px
 			height auto
 			min-height 100px
 
@@ -959,8 +971,14 @@ body
 // vision page
 .image-text-floats
 	position relative
+	.img
+		padding-left 0
+		padding-right 0
+		@media(max-width:768px)
+			padding 15px
 	.text-col-vertical-center
-		padding 30px
+		padding-left 30px
+		padding-right 30px
 		position absolute
 		top 50%
 		transform translateY(-50%)
@@ -969,7 +987,7 @@ body
 			position relative
 			top 0
 			transform none
-			padding 30px
+			padding 15px
 
 
 
@@ -1135,7 +1153,7 @@ body
 			&:not(:last-child)
 				margin-right 15px
 			&.header-btn
-				margin 0 !important
+				margin-left 0 !important
 
 
 
@@ -1197,12 +1215,14 @@ body, html
 	z-index 0
 .home
 	.header-title
+		bottom 155px
 		@media (max-width:767px)
 			padding-bottom 100px
 .ctr
 	text-align center
 .header-title
-	position relative
+	position absolute
+	bottom 70px
 	z-index 1
 	display block
 	width 100%
@@ -1210,12 +1230,15 @@ body, html
 	margin-top 0px
 	padding 0 20px
 	h1
+		margin-bottom 10px !important
 		color $white
 		font-size 40px
 		font-weight 700
 		margin-bottom 20px
 		line-height 1.1em
 		.h1-sub
+			display inline-block
+			font-size 0.5em
 			font-weight 500
 			display block
 	h2
@@ -1282,7 +1305,11 @@ body, html
 	.carousel-cell-content
 		opacity 1
 		transform translate3d(0, 0, 0)
-
+.flickity-prev-next-button.next
+	svg
+		display block !important
+	&:before
+		display none !important
 .flickity-enabled
 	&.is-draggable
 		.flickity-viewport

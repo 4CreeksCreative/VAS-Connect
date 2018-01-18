@@ -10620,7 +10620,7 @@ footer a {
 }
 
 footer:not(.bg--primary):not(.bg--dark) a {
-    color: #666666;
+    /* color: #666666; */
 }
 
 footer a.type--fine-print:not(:first-child) {
