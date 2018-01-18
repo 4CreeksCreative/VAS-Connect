@@ -1069,15 +1069,19 @@ body
 @media (max-width:992px)
 	#menu1
 		display block
-		right -80vw !important
+		width 80vw
+		right 0
 		transition 0.5s
 		position fixed
 		height 100vh
-		width 100vw
+		transition 0.5s
+		//width 100vw
 		background $blueGradient
 		top 0
 		&.custom-toggled-class
-			display none
+			transition 0.5s
+			right -80vw !important
+			//display none
 		.container
 			padding 50px 25px
 	#menu-overlay-toggle
@@ -1134,15 +1138,15 @@ body
 				top initial
 
 
-	#menu1
-		width 80vw
-		position absolute
-		right 0
-		transition 0.5s
-		padding-top 0px
-		//height 90vh
-		overflow-y auto
-		overflow-x hidden
+	// #menu1
+	// 	width 80vw
+	// 	position fixed
+	// 	right 0
+	// 	transition 0.5s
+	// 	padding-top 0px
+	// 	//height 90vh
+	// 	overflow-y auto
+	// 	overflow-x hidden
 	.logo-mobile
 		margin-left 15px !important
 	.stack-menu
