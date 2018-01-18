@@ -47,6 +47,7 @@ h1
 		line-height 40px
 h2
 	font-size 48px
+	line-height 1.1em
 	@media (max-width:767px)
 		font-size 32px
 		line-height 36px
@@ -77,8 +78,11 @@ p > a
 	&:hover
 		color $blue
 h1,h2,h3,h4,h5,h6,p
+	margin-bottom 25px
 	a
 		color $blue
+.btn
+	margin 0
 
 #blog-content, #about-content, section>.container>.row
 	p:not([class*="color-"]), pre
@@ -115,7 +119,7 @@ h1,h2,h3,h4,h5,h6,p
 
 
 section
-	padding 50px 0
+	padding 30px 0
 
 .color-yellow
 	color $yellow
@@ -238,7 +242,9 @@ textarea
 
 // --- misc classes
 #phone
-	padding-top 300px
+	width 100%
+	overflow-x hidden
+	padding-top 250px
 	.container
 		padding 50px 0
 		@media (max-width:992px)
@@ -246,21 +252,22 @@ textarea
 	.phoneimg
 		position absolute
 		height 500px
-		bottom 50px
+		bottom 30px
 		right 0
 		left 35%
 		margin auto
 	@media (max-width:1200px)
+		padding-top 130px
 		.phoneimg
 			height 400px
 			left 55%
 	@media (max-width:992px)
-		padding-top 200px
+		padding-top 130px
 		.phoneimg
 			height 400px
 			left 55%
 	@media (max-width:500px)
-		padding-top 100px
+		padding-top 30px
 	.download-link
 		display inline-block
 		width 200px
@@ -783,8 +790,17 @@ header
 	z-index 10
 	width 100%
 	&.sticky
+		height 80px
 		position fixed
 		background $blueGradient
+		a.logo
+			height 70px
+			.logo
+				height 70px
+		nav
+			#mega-menu
+				ul.menu-horizontal
+					top -10px
 	// div
 	// 	position relative
 	// 	height 100%
@@ -836,7 +852,18 @@ header
 		position relative
 		top 20px
 		ul.menu-horizontal
-			line-height 50px
+			position relative
+			top 10px
+			li
+				line-height 40px
+				display inline-block
+				&:not(:last-child)
+					margin-right 15px
+				&.header-btn
+					margin-right 0px
+					margin-left 15px
+				h6
+					font-size 16px
 			@media (max-width:992px)
 				line-height 25px
 			a.btn
@@ -1018,8 +1045,9 @@ body
 @media (max-width:990px)
 	.menu-horizontal
 		li
-			display inline-block
-			margin-right 15px
+			display block !important
+			&:not(:last-child), &:not(.header-btn)
+				margin-right 15px
 @media (max-width:992px)
 	#menu1
 		right -80vw !important
@@ -1042,7 +1070,13 @@ body
 	#updates-section
 		margin-top -25px
 	header
-		height 60px
+		height 60px !important
+		&.sticky
+			a.logo
+				height 55px
+				img
+					height 100% !important
+			
 		a.logo
 			height 55px
 			img
@@ -1094,8 +1128,11 @@ body
 		margin 25px 0px 0px 0px
 	ul.menu-horizontal
 		li
-			display block
-			margin-top 15px
+			display block !important
+			&:not(:last-child)
+				margin-right 15px
+			&.header-btn
+				margin 0 !important
 
 
 
@@ -1345,7 +1382,6 @@ body, html
 	display inline-block
 	justify-content center
 	vertical-align bottom
-	text-transform uppercase
 	cursor pointer
 	padding 7px 14px 7px
 	font-size 12px
@@ -1361,6 +1397,8 @@ body, html
 	-webkit-transition all 0.1s ease-in-out 0s
 	transition all 0.1s ease-in-out 0s
 	outline none
+	span.btn__text
+		text-transform uppercase
 	&.medium
 		padding 9px 18px 9px
 		font-size 14px
