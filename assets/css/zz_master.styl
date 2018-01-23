@@ -1370,6 +1370,8 @@ body, html
 		top 20%
 		width 45px
 		height 45px
+		@media (max-width:767px)
+			left -50%
 	.arrow
 		fill $white
 
@@ -1484,10 +1486,10 @@ body, html
 		border 2px solid $white
 		.btn__text
 			color $white
-			&:hover
-				color $blue
 		&:hover
 			background-color $white
+			.btn__text
+				color $blue
 		&:active
 			border-color $white
 			background-color $white
