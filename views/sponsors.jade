@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	.content
+		section#hero.pos-relative
+			.hero.height-30
+				.header-title
+					h1.text-center
+						span.h1-sub SPONSORS
+					h1.ctr.
+						Special thanks to all our sponsors
+				.lines
+
+			//-.slider(data-arrows='false', data-paging='false')
+				ul.slides
+					li.height-80.unpad.imagebg.parallax
+						.background-image-holder
+							img(src="/img/test.jpg")
+					li.height-80.unpad.imagebg.parallax
+						.background-image-holder
+							img(src="/img/test.jpg")
+
+			//-.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
+				.row.text-center
+					.col-sm-12
+						h1.color-white
+							|#[span.bold Connect 18] A Dairy Tech Summit
+						p.color-white Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
+						h4.color-white.unmarg JUNE 25 - 27, 2018
+						h5.color-white Park Hyatt Resort, Beaver Creek, Colorado
+
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						h5 The line up for the 2018 Connect Summit is amazing. Be inspired by all people who make this event possible.
+		section#reasons-to-attend
+			.container
+				.row.text-center
+					.col-sm-4.clearfix.reason
+						.col-sm-12.col-xs-3.imagebg.not-round.mb--1
+							.background-image-holder
+								img(src="/img/test.jpg")
+						.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
+							h4.text-left-xs.color-blue Dairy Talks
+							p.text-left-xs.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+							a.text-left.btn.large.blue(href="#")
+								span.btn__text Read Bio
