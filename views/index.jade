@@ -72,19 +72,23 @@ block content
 						a.btn.blue.large.mt--1(href="#")
 							span.btn__text View our program
 			.main-carousel
-				.carousel-cell
-					.carousel-cell-image(style="background:url('/img/slider-image-1.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
-					.carousel-cell-content
-						h3 Mike Rowe
-						p
-							| Mike Rowe is a TV host, writer, narrator, producer, actor and spokesman. He is well known for the television show Dirty Jobs.
+				if contentful.speakers != undefined
+					for item in contentful.speakers
+						.carousel-cell
+							.carousel-cell-image(style="background:url('#{asset(item.speakerPhoto)}');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='#{item.speakerPhoto.fields.title}', width='', height='')
+							.carousel-cell-content
+								h3= item.speakerName
+								if item.shortDescription != undefined
+									.md!= md(item.shortDescription)
+								a.btn.white.large(href="#{item._url}")
+									span.btn__text Read More
 
-				.carousel-cell
-					.carousel-cell-image(style="background:url('/img/speakers/tim.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
-					.carousel-cell-content
-						h3 Tim Taylor
-						p
-							| Lorem Ipsum dolar amet
+				//- .carousel-cell
+				//- 	.carousel-cell-image(style="background:url('/img/speakers/tim.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+				//- 	.carousel-cell-content
+				//- 		h3 Tim Taylor
+				//- 		p
+				//- 			| Lorem Ipsum dolar amet
 		script.
 			$(document).ready(function(){
 					
@@ -122,34 +126,6 @@ block content
 				});
 
 
-		//-section
-			.row
-				.slider(data-arrows='true', data-paging='false')
-					ul.slides.row
-						li.col-sm-9.height-80.imagebg
-							.background-image-holder
-								img(src="/img/test.jpg")
-							.container.pos-vertical-center
-								.col-sm-6.float-right
-									h3.color-white Mike Rowe
-									p.color-white.
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						li.col-sm-9.height-80.imagebg
-							.background-image-holder
-								img(src="/img/test.jpg")
-							.container.pos-vertical-center
-								.col-sm-6.float-right
-									h3.color-white Mike Rowe
-									p.color-white.
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						li.col-sm-9.height-80.imagebg
-							.background-image-holder
-								img(src="/img/test.jpg")
-							.container.pos-vertical-center
-								.col-sm-6.float-right
-									h3.color-white Mike Rowe
-									p.color-white.
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		section
 			.container
 				.row.text-center
