@@ -1,4 +1,4 @@
-extends layout
+extends /layout
 
 block content
 	.content
@@ -7,62 +7,67 @@ block content
 				.header-title
 					h1.text-center
 						span.h1-sub BIOGRAPHY
-					h1.ctr.
-						Be inspired by the Connect 2018 line-up
+					h1.ctr=entry.speakerName
 				.lines
-
-			//-.slider(data-arrows='false', data-paging='false')
-				ul.slides
-					li.height-80.unpad.imagebg.parallax
-						.background-image-holder
-							img(src="/img/test.jpg")
-					li.height-80.unpad.imagebg.parallax
-						.background-image-holder
-							img(src="/img/test.jpg")
-
-			//-.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
+		section
+			.container
 				.row.text-center
 					.col-sm-12
-						h1.color-white
-							|#[span.bold Connect 18] A Dairy Tech Summit
-						p.color-white Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
-						h4.color-white.unmarg JUNE 25 - 27, 2018
-						h5.color-white Park Hyatt Resort, Beaver Creek, Colorado
-
+						.short-description.unmarg.md!= md(entry.shortDescription)
+		section#bio
+			//-p= JSON.stringify(entry.textSections)
+			.container
+				if entry.textSections != undefined
+					for item in entry.textSections
+						if item.sys.contentType.sys.id === 'textImageSection'
+							.row.textImageSection
+								.col-sm-6.float-right.text-center-sm
+									img(src="#{asset(item.fields.image)}")
+								.col-sm-6.float-left
+									if item.fields.subhead != undefined
+										h4.color-blue= item.fields.subhead
+									if item.fields.body != undefined
+										.md!= md(item.fields.body)
+						else if item.sys.contentType.sys.id === 'textSection'
+							.row
+								.col-sm-8
+									if item.fields.subhead != undefined
+										h4.color-blue= item.fields.subhead
+									if item.fields.body != undefined
+										.md!= md(item.fields.body)
+						else if item.sys.contentType.sys.id === 'exerp'
+							.row
+								.col-sm-8
+									h3.color-green.exerp= item.fields.body
+				//- .row
+				//- 	.col-sm-6.float-right
+				//- 		img(src="/img/test.jpg")
+				//- 	.col-sm-6
+				//- 		h4.color-blue The dirtiest man on TV
+				//- 		p.
+				//- 			His performing career began in 1984, when he faked his way into the Baltimore Opera to get his union card and meet girls, both of which he accomplished during a performance of Rigoletto. His transition to television occurred in 1990 when —to settle a bet — he auditioned for the QVC Shopping Channel and was promptly hired after talking about a pencil for nearly eight minutes. There, he worked the graveyard shift for three years, until he was ultimately fired for making fun of products and belittling viewers.
+				//- 	.col-sm-8
+				//- 		p.
+				//- 			Thanks to QVC, Mike became practiced at the art of talking for long periods without saying anything of substance, a skill that would serve him well as a TV host. Throughout the ’90s, Mike had hundreds of jobs and relished his role as a chronic freelancer with lots of time to loaf around. Then, through a horrible miscalculation, he pitched a three-hour special to the Discovery Channel called DIRTY JOBS. Viewers liked it a lot more than Mike thought they would, and Discovery responded by ordering 39 episodes — a shocking commitment that Mike was contractually obligated to honor.  For the first time in his career, Mike went to work with a vengeance. Over the next decade, Mike would become known as “the dirtiest man on TV.” He traveled to all 50 states and completed 300 different jobs, transforming cable television into a landscape of swamps, sewers, ice roads, coal mines, oil derricks, crab boats, hillbillies, and lumberjack camps. For this, he has received both the credit and the blame. Looking for a simpler way to make the rent, Mike began to seek out opportunities that didn’t require multiple showers. He narrated hundreds of documentaries about space, nature, war, serial killers, hurricanes, dinosaurs and how stuff works. (If there’s a wildebeest getting eaten alive by a lion, it’s probably  Mike telling you about it.)
+				//- .row.border-left-green.mt--2.mb--2
+				//- 	.col-sm-8
+				//- 		h2.color-green Mike had hundreds of jobs and relished his role as a chronic freelancer with lots of time to loaf around.
+				//- .row
+				//- 	.col-sm-8
+				//- 		p.
+				//- 			As a public speaker, he’s routinely hired by the Fortune 500 to frighten employees with stories of maggot farmers and sheep castrators. And when Madison Avenue came calling, Mike said sure. He has forged dozens of partnerships with many iconic brands, and filmed approximately 1 million Ford commercials.
+				//- .row
+				//- 	.col-sm-8
+				//- 		h5.color-blue THe strange desire
+				//- 		p.
+				//- 			Eventually, Mike was overcome with a strange desire to give something back. On Labor Day 2008, he launched mikeroweWORKS, a PR campaign designed to reinvigorate the skilled trades. He’s since written extensively about the country’s relationship with work, the widening skills gap, offshore manufacturing, infrastructure decline, currency devaluation and several other topics for which he has no actual credentials. He once gave a TED Talk on the Changing Face of the Modern-Day Proletariat, and in May 2011, he testified before the U.S. SENATE COMMERCE COMMITTEE about the importance of changing perceptions and stereotypes around blue-collar work.  Currently, Mike and Caterpillar are working together to launch PROFOUNDLY DISCONNECTED, a new initiative focused on technical recruitment.
+				//- 		p.
+				//- 			Today, Mike runs the mikeroweWORKS Foundation, which awards scholarships to students pursuing a career in the skilled trades. He is closely associated with the Future Farmers of America, Skills USA, and the Boy Scouts of America, who recently honored him as a Distinguished Eagle Scout. For reasons he cannot explain, Forbes has identified Mike as one of the country’s 10 Most Trustworthy Celebrities for the past three years.
+				//- 		p.
+				//- 			Mike lives in San Francisco, where he sometimes spends up to five days a month. In his spare time he likes to read pulp fiction and write about himself in the third person. He is still considered by many to be a nice guy.
 		section
 			.container
-				.row.text-center.mt--2
+				.row
 					.col-sm-12
-						h5 Mike Rowe is a TV host, writer, narrator, producer, actor and spokesman and well-known for presenting Dirty Jobs on Discovery Channel.
-		section#speakers
-			.container
-				.row
-					.col-sm-6.float-right
-						img(src="/img/test.jpg")
-					.col-sm-6
-						h5.color-blue The dirtiest man on TV
-						p.
-							His performing career began in 1984, when he faked his way into the Baltimore Opera to get his union card and meet girls, both of which he accomplished during a performance of Rigoletto. His transition to television occurred in 1990 when —to settle a bet — he auditioned for the QVC Shopping Channel and was promptly hired after talking about a pencil for nearly eight minutes. There, he worked the graveyard shift for three years, until he was ultimately fired for making fun of products and belittling viewers.
-					.col-sm-8
-						p.
-							Thanks to QVC, Mike became practiced at the art of talking for long periods without saying anything of substance, a skill that would serve him well as a TV host. Throughout the ’90s, Mike had hundreds of jobs and relished his role as a chronic freelancer with lots of time to loaf around. Then, through a horrible miscalculation, he pitched a three-hour special to the Discovery Channel called DIRTY JOBS. Viewers liked it a lot more than Mike thought they would, and Discovery responded by ordering 39 episodes — a shocking commitment that Mike was contractually obligated to honor.  For the first time in his career, Mike went to work with a vengeance. Over the next decade, Mike would become known as “the dirtiest man on TV.” He traveled to all 50 states and completed 300 different jobs, transforming cable television into a landscape of swamps, sewers, ice roads, coal mines, oil derricks, crab boats, hillbillies, and lumberjack camps. For this, he has received both the credit and the blame. Looking for a simpler way to make the rent, Mike began to seek out opportunities that didn’t require multiple showers. He narrated hundreds of documentaries about space, nature, war, serial killers, hurricanes, dinosaurs and how stuff works. (If there’s a wildebeest getting eaten alive by a lion, it’s probably  Mike telling you about it.)
-				.row.border-left-green.mt--2.mb--2
-					.col-sm-8
-						h2.color-green Mike had hundreds of jobs and relished his role as a chronic freelancer with lots of time to loaf around.
-				.row
-					.col-sm-8
-						p.
-							As a public speaker, he’s routinely hired by the Fortune 500 to frighten employees with stories of maggot farmers and sheep castrators. And when Madison Avenue came calling, Mike said sure. He has forged dozens of partnerships with many iconic brands, and filmed approximately 1 million Ford commercials.
-				.row
-					.col-sm-8
-						h5.color-blue THe strange desire
-						p.
-							Eventually, Mike was overcome with a strange desire to give something back. On Labor Day 2008, he launched mikeroweWORKS, a PR campaign designed to reinvigorate the skilled trades. He’s since written extensively about the country’s relationship with work, the widening skills gap, offshore manufacturing, infrastructure decline, currency devaluation and several other topics for which he has no actual credentials. He once gave a TED Talk on the Changing Face of the Modern-Day Proletariat, and in May 2011, he testified before the U.S. SENATE COMMERCE COMMITTEE about the importance of changing perceptions and stereotypes around blue-collar work.  Currently, Mike and Caterpillar are working together to launch PROFOUNDLY DISCONNECTED, a new initiative focused on technical recruitment.
-						p.
-							Today, Mike runs the mikeroweWORKS Foundation, which awards scholarships to students pursuing a career in the skilled trades. He is closely associated with the Future Farmers of America, Skills USA, and the Boy Scouts of America, who recently honored him as a Distinguished Eagle Scout. For reasons he cannot explain, Forbes has identified Mike as one of the country’s 10 Most Trustworthy Celebrities for the past three years.
-						p.
-							Mike lives in San Francisco, where he sometimes spends up to five days a month. In his spare time he likes to read pulp fiction and write about himself in the third person. He is still considered by many to be a nice guy.
-		section
-			.row
-				.col-sm-12
-					a.btn.darkBlue(href="/speakers") View All Speakers
+						a.btn.blue.large(href="/speakers")
+							span.btn__text View All Speakers
