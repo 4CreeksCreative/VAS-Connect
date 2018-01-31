@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	.content
+		section#hero.pos-relative
+			.hero.height-30
+				.header-title
+					h1.text-center
+						span.h1-sub REGISTRATION
+					h1.ctr.
+						Thanks for your intrest in #[br]Connect Summit 2018
+				.lines
+
+
+		section#request-reg-info
+			.container
+				.row.text-center
+					.col-sm-12
+						h3.color-white Registration information
+						p.color-white Request information on attending the Connect Summit
+				.row.text-center
+					form.form-email.custom-script(name="registration-information-request" netlify-honeypot="bot-field", action='/registration-thank-you', netlify)
+						.col-sm-6
+							input.validate-required(type="text" placeholder="Your name" style="display:inline-block;" name="name")
+						.col-sm-6
+							input.validate-required(type="text" placeholder="Dairy / Business Name" style="display:inline-block;" name="dairy / business name")
+						.col-sm-6
+							input.validate-required(type="text" placeholder="Address" style="display:inline-block;" name="address")
+						.col-sm-6
+							input.validate-required.validate-number-dash(type="text" placeholder="Phone Number" style="display:inline-block;" name="phone #")
+						.col-sm-6
+							input(type="text" placeholder="Number of Cows" style="display:inline-block;" name="# of cows")
+						.col-sm-6
+							input.validate-required.validate-email(type="text" placeholder="E-mail address" style="display:inline-block;" name="email")
+						.col-sm-2.float-right
+							button.btn.white.medium(ype="submit")
+								span.btn__text SUBMIT
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						h3.color-green Have a registration code?
+						a.btn.green.large(href="#" target="_blank")
+							span.btn__text Register Now
