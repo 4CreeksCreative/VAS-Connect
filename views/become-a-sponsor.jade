@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	.content
+		section#hero.pos-relative
+			.hero.height-30
+				.header-title
+					h1.text-center
+						span.h1-sub BECOME A SPONSOR
+					h1.ctr.
+						Thanks for your intrest in #[br]becoming a sponsor
+				.lines
+
+
+		section#request-reg-info
+			.container
+				.row.text-center
+					.col-sm-12
+						h3.color-white Sponsor information
+						p.color-white Please provide the following information and we will get in contact
+				.row.text-center
+					form.form-email.custom-script(name="sponsor-form" netlify-honeypot="bot-field", action='/sponsor-thank-you', netlify)
+						.col-sm-6
+							input.validate-required(type="text" placeholder="Your name" style="display:inline-block;" name="name")
+						.col-sm-6
+							input.validate-required(type="text" placeholder="Company Name" style="display:inline-block;" name="dairy / business name")
+							input.validate-required.validate-number-dash(type="text" placeholder="Phone Number" style="display:inline-block;" name="phone #")
+						.col-sm-6
+							input.validate-required.validate-email(type="text" placeholder="E-mail address" style="display:inline-block;" name="email")
+						.col-sm-2.float-right
+							button.btn.white.medium(ype="submit")
+								span.btn__text SUBMIT
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						h3.color-green Have a registration code?
+						a.btn.green.large(href="#" target="_blank")
+							span.btn__text Register Now
