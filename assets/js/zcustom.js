@@ -51,7 +51,7 @@ $('form.form-email.custom-script').submit(function(e){
         thisForm.addClass('attempted-submit');
 
 
-	if (mr.forms.validateFields($(thisForm[0]+'.form-email.custom-script')) !== 1) return
+	if (mr.forms.validateFields($(thisForm)) !== 1) return
 	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
 })
