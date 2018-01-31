@@ -48,7 +48,14 @@ footer#footer.corner-point-brown.unpad--top
 							- stop--
 							- console.log(stop < 0)
 							if stop > 0
-								a(href="#{item.companyWebsite}" target="_blank")
+								if item.companyWebsite != undefined
+									a(href="#{item.companyWebsite}" target="_blank")
+										li
+											if item.whiteLogo != undefined
+												img(src="#{asset(item.whiteLogo)}")
+											else
+												img(src="#{asset(item.logo)}")
+								else
 									li
 										if item.whiteLogo != undefined
 											img(src="#{asset(item.whiteLogo)}")
