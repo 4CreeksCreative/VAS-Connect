@@ -46,7 +46,6 @@ footer#footer.corner-point-brown.unpad--top
 						- var stop = 4
 						for item in contentful.sponsors
 							- stop--
-							- console.log(stop < 0)
 							if stop > 0
 								if item.companyWebsite != undefined
 									a(href="#{item.companyWebsite}" target="_blank")
