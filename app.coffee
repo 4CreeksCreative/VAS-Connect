@@ -32,6 +32,8 @@ module.exports =
 						'order': 'fields.speakerId'
 					}
 					path: (e) -> "speaker/#{e.slug}"
+				sponsors:
+					id:'sponsor'
 	]
 
 	stylus:
