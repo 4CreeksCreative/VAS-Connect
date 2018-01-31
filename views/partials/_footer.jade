@@ -6,13 +6,14 @@ footer#footer.corner-point-brown.unpad--top
 					h3.color-white Don't miss a thing
 					p.color-white Sign up to receive Connect Summit updates and the Connect Technology Newsletter
 			.row.text-center
-				.col-sm-5
-					input(type="text" placeholder="Your name" style="display:inline-block;")
-				.col-sm-5
-					input(type="text" placeholder="E-mail address" style="display:inline-block;")
-				.col-sm-2
-					a.btn.white.medium(href="")
-						span.btn__text SUBMIT
+				form(name="newsletter-subscribe" netlify-honeypot="bot-field", action='/thankyou', netlify)
+					.col-sm-5
+						input(type="text" placeholder="Your name" style="display:inline-block;")
+					.col-sm-5
+						input(type="text" placeholder="E-mail address" style="display:inline-block;")
+					.col-sm-2
+						a.btn.white.medium(href="" type="submit")
+							span.btn__text SUBMIT
 	section
 		.container
 			.row
