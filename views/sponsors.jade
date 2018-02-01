@@ -41,7 +41,7 @@ block content
 						for item in contentful.sponsors
 							.masonry__item.col-sm-3
 								if item.companyWebsite != undefined
-									a(target="_blank" href="item.companyWebsite")
+									a(target="_blank" href="#{item.companyWebsite}")
 										img(src="#{asset(item.logo)}")
 								else
 									img(src="#{asset(item.logo)}")
