@@ -49,10 +49,10 @@ footer#footer.corner-point-brown.unpad--top
 						- var stop = 4
 						for item in contentful.sponsors
 							- stop--
-							if stop > 0
+							if stop >= 0
 								if item.companyWebsite != undefined
-									a(href="#{item.companyWebsite}" target="_blank")
-										li
+									li
+										a(href="#{item.companyWebsite}" target="_blank")
 											if item.whiteLogo != undefined
 												img(src="#{asset(item.whiteLogo)}")
 											else
