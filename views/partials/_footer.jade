@@ -45,26 +45,27 @@ footer#footer.corner-point-brown.unpad--top
 					h3 Supported by
 			.row.text-center
 				ul#sponsors.row
-					if contentful.sponsors != undefined
-						- var stop = 4
-						for item in contentful.sponsors
-							- stop--
-							if stop >= 0
-								if item.companyWebsite != undefined
-									li
-										a(href="#{item.companyWebsite}" target="_blank")
-											if item.whiteLogo != undefined
-												img(src="#{asset(item.whiteLogo)}")
-											else
-												img(src="#{asset(item.logo)}")
-								else
-									li
-										if item.whiteLogo != undefined
-											img(src="#{asset(item.whiteLogo)}")
-										else
-											img(src="#{asset(item.logo)}")
-					//- li
-					//- 	img(src="/img/sponsors/vasLogo-white.png")
+					//- if contentful.sponsors != undefined
+					//- 	- var stop = 4
+					//- 	for item in contentful.sponsors
+					//- 		- stop--
+					//- 		if stop >= 0
+					//- 			if item.companyWebsite != undefined
+					//- 				li
+					//- 					a(href="#{item.companyWebsite}" target="_blank")
+					//- 						if item.whiteLogo != undefined
+					//- 							img(src="#{asset(item.whiteLogo)}")
+					//- 						else
+					//- 							img(src="#{asset(item.logo)}")
+					//- 			else
+					//- 				li
+					//- 					if item.whiteLogo != undefined
+					//- 						img(src="#{asset(item.whiteLogo)}")
+					//- 					else
+					//- 						img(src="#{asset(item.logo)}")
+					li
+						a(href="http://web.vas.com/" target="_blank")
+							img(src="/img/sponsors/vasLogo-white.png")
 					//- li
 					//- 	img(src="/img/sponsors/vasLogo-white.png")
 					//- li
