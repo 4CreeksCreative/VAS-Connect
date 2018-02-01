@@ -56,7 +56,9 @@ block content
 							h4.color-blue Connect'18 Event App available
 							p.
 								Download the HelloCrowd app now - available for iOS and Android!
-							ol(style="padding-left:20px;")
+							a.btn.blue.medium.toggle-trigger(data-toggle="#app-instructions")
+								span.btn__text How to install the app
+							ol#app-instructions(style="padding-left:20px;display:none;")
 								li
 									h6.
 										From your mobile device or app, visit #[a(href="https://hca.io/e/v7m8146" target="_blank") this link], or simply visit your device's app store#[br]
@@ -70,6 +72,7 @@ block content
 									h6.
 										Start browsing and engaging with conference info!#[br]
 							//- #[a(href="https://www.hellocrowd.net/" target="_blank") learn how it works!]
+						.col-xs-7.col-sm-6.col-md-offset-1.col-lg-5.col-lg-offset-2.mt--1
 							a.download-link(href="https://itunes.apple.com/us/app/hellocrowd/id936726622?mt=8" target="_blank")
 								img(src="/img/applestore.png", alt="apple store icon")
 							a.download-link(href="https://play.google.com/store/apps/details?id=com.hellocrowd.container&hl=en" target="_blank")

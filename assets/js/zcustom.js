@@ -27,7 +27,10 @@ $(document).on('click', '#day3-show', function(){
 	$('#day3').find('.event').toggleClass('active')
 	$("#day3").find('.event-description').stop().slideToggle()
 })
-
+$(document).on('click','.toggle-trigger', function(e){
+	e.preventDefault()
+	$($(this).attr('data-toggle')).slideToggle()
+})
 
 
 $('form.form-email.custom-script').submit(function(e){

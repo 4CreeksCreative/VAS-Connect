@@ -11,13 +11,17 @@ block content
 						Thanks for your interest in #[br]Connect Summit 2018
 				.lines
 
-
-		section#request-reg-info
+		section
 			.container
 				.row.text-center
 					.col-sm-12
-						h3.color-white Registration information
-						p.color-white Request information on attending the Connect Summit
+						h5 It would be great having you on the Connect Summit. Please fill in the form below, we will review your request and contact you about your registration.
+		section#request-reg-info(style="padding-top:20px;")
+			.container
+				.row.text-center
+					.col-sm-12
+						h3.color-blue How to register
+						p Request information on attending the Connect Summit
 				.row.text-center
 					form.form-email.custom-script(name="registration-information-request" netlify-honeypot="bot-field", action='/registration-thank-you', netlify)
 						.col-sm-6
@@ -32,9 +36,9 @@ block content
 							input(type="text" placeholder="Number of Cows" style="display:inline-block;" name="# of cows")
 						.col-sm-6
 							input.validate-required.validate-email(type="text" placeholder="E-mail address" style="display:inline-block;" name="email")
-						.col-sm-2.float-right
-							button.btn.white.medium(type="submit")
-								span.btn__text SUBMIT
+						.col-sm-12(style="margin-top:20px")
+							button.btn.blue.medium(type="submit" style="width:auto;")
+								span.btn__text submit my request
 		section
 			.container
 				.row.text-center
