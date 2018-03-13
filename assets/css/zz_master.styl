@@ -67,7 +67,7 @@ h4,
 	font-size 24px
 	line-height 32px
 	font-weight 700
-h5,.short-description p
+h5,.short-description.md p
 	font-size 22px
 	line-height 24px
 	font-weight 600
@@ -76,7 +76,9 @@ h6, label
 	font-size 18px
 	line-height 28px
 	font-weight 600
-h5,h6,h4,.short-description p
+h5,h6,h4
+	max-width 670px
+.short-description:not(.md), .short-description.md p
 	max-width 670px
 	margin-left auto
 	margin-right auto
