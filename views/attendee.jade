@@ -9,7 +9,7 @@ block content
 					h1.text-center
 						span.h1-sub ATTENDEE
 					h1.ctr.
-						Intelligence at the heart of your dairy
+						TESTING
 				.lines
 
 			//-.slider(data-arrows='false', data-paging='false')
@@ -33,7 +33,7 @@ block content
 		section
 			.container
 				
-				.row.text-center
+				//-.row.text-center
 					.col-sm-12
 						h4.short-description In an ever changing industry, what steps do you need to take to survive and thrive in the digital era?
 						h6.short-description.
@@ -42,9 +42,32 @@ block content
 							Connect engages dairy leaders with trending and thought-provoking discussions to discover practical technology applications, best practices and the clearest path to transforming the way they do business.
 						//-a.btn.green.medium(href="#")
 							span.btn__text READ ABOUT OUR MISSION
-				.row
+				.row.text-center
 					.col-sm-12
-						div(data-netlify-identity-menu)
+						div(data-netlify-identity-button)
+						script(src='https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js')
+						script(src="https://rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js")
+						script.
+							var mDown = new showdown.Converter()
+							var client = contentful.createClient({
+							  space: '4w502gnanmnv',
+							  accessToken: '47134c48f600783d7c4bf8b93d58acf22e41cfe53f1e6183a8dbed1c00ec3b81'
+							})
+							netlifyIdentity.on("login", function(user){
+								client.getEntries({
+								  'content_type': 'attendee',
+								  'fields.id':user.id
+								})
+								.then(function (entries) {
+								    el = $('#information-container')
+									el.append('<h4 class="short-description">'+entries.items[0].fields.name+'</h4>')
+									el.append(mDown.makeHtml(entries.items[0].fields.content))
+								})
+							});
+		section
+			.container
+				.row.text-center
+					#information-container.col-sm-12
 		//-section
 			.container
 				.row
