@@ -644,6 +644,10 @@ textarea
 .shift-up
 	top -100px
 	margin-bottom -100px
+	@media(max-width:767px)
+		top 0
+		margin-top 40px
+		margin-bottom 0
 
 
 
@@ -800,6 +804,7 @@ textarea
 		background $green
 
 
+
 // --- blue on white
 .btn-blue-white,
 .btn-blue-white:visited
@@ -827,7 +832,14 @@ textarea
 	transition padding 0s
 
 
-
+a.netlify-identity-button
+	background rgba(0,0,0,0.0)
+	border-color $blue !important
+	color $blue
+	&:hover
+		background $blue
+		border-color $white !important
+		color $white
 
 
 
@@ -1330,14 +1342,22 @@ body, html
 			font-size 0.5em
 			font-weight 500
 			display block
-	h2
+	h3
 		line-height 1.3em
 		margin 0 auto
 		font-size 24px
 		color $blue
 		font-weight 600
 		max-width 500px
-		margin-bottom 40px
+		margin-bottom 30px
+	h2
+		line-height 1.3em
+		margin 0 auto
+		font-size 28px
+		color $white
+		font-weight 600
+		max-width 500px
+		margin-bottom 30px
 
 .info-date
 	color $green
@@ -1504,7 +1524,7 @@ body, html
 @media screen and (min-width: 1600px)
 	.carousel-cell, .carousel-cell-image
 		min-height 700px
-.btn
+.btn, .netlify-identity-button
 	display inline-block
 	justify-content center
 	vertical-align bottom
@@ -1583,3 +1603,6 @@ body, html
 	&:hover
 		.btn__text
 			color $white
+.netlify-identity-button
+	padding 9px 18px 9px
+	font-size 14px
