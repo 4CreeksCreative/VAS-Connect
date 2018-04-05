@@ -6,8 +6,8 @@ $(document).on('scroll', function(){
 		$('header').removeClass('sticky');
 	}
 })
-$(document).on('click', '#events .event .arrow', function(){
-	var event = $(this).parents('.event')
+$(document).on('click', '#events .event', function(){
+	var event = $(this)
 	if (event.hasClass('active')){
 		event.removeClass('active').find('.event-description').stop().slideToggle()
 	}
@@ -15,17 +15,10 @@ $(document).on('click', '#events .event .arrow', function(){
 		event.addClass('active').find('.event-description').stop().slideToggle()
 	}
 })
-$(document).on('click', '#day2-show', function(){
-	$("#day2").find('.event').toggleClass('active')
-	$("#day2").find('.event-description').stop().slideToggle()
-})
-$(document).on('click', '#day1-show', function(){
-	$('#day1').find('.event').toggleClass('active')
-	$("#day1").find('.event-description').stop().slideToggle()
-})
-$(document).on('click', '#day3-show', function(){
-	$('#day3').find('.event').toggleClass('active')
-	$("#day3").find('.event-description').stop().slideToggle()
+
+$(document).on('click', '.show-all', function(){
+	$("#"+$(this).attr('id')+"-section").find('.event').toggleClass('active')
+	$("#"+$(this).attr('id')+"-section").find('.event-description').stop().slideToggle()
 })
 $(document).on('click','.toggle-trigger', function(e){
 	e.preventDefault()
