@@ -40,9 +40,9 @@ block content
 										.row.event
 											.col-md-8.event-details
 												//-p= JSON.stringify(event.fields.question)
-												!= md(event.fields.question)
+												.md!= md(event.fields.question)
 												.event-description(style="display:none;")
-													!= md(event.fields.answer)
+													.md!= md(event.fields.answer)
 											.float-right
 												.arrow
 			//- #registration-section
