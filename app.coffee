@@ -33,6 +33,11 @@ module.exports =
 					path: (e) -> "speaker/#{e.slug}"
 				sponsors:
 					id:'sponsor'
+				QA:
+					id:"qASection"
+					filters:{
+						'order':'fields.order'
+					}
 	]
 
 	stylus:
