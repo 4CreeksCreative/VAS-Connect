@@ -6,7 +6,11 @@ css_pipeline = require 'css-pipeline'
 slugify      = require 'slugify'
 contentful   = require 'roots-contentful'
 md           = require 'marked'
+test         = {}
 
+getTyne = (entry) ->
+	if entry.slug == 'tyne-morgan'
+		test["tyne"] = entry
 getDateVars = (entry) ->
 	#console.log(entry)
 	if entry.fields.timeSlot != undefined
@@ -32,12 +36,6 @@ getDateVars = (entry) ->
 module.exports =
 	output: 'public'
 	env: 'en'
-	locals:
-		env: 'en'
-		basedir: 'views'
-		md: require 'marked'
-		d: getDateVars
-		
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
 
 	extensions: [
@@ -54,6 +52,7 @@ module.exports =
 						'order': 'fields.speakerId'
 					}
 					path: (e) -> "speaker/#{e.slug}"
+					transform: getTyne
 				sponsors:
 					id:'sponsor'
 				QA:
@@ -83,3 +82,10 @@ module.exports =
 
 	server:
 		clean_urls:true
+
+	locals:
+		env: 'en'
+		basedir: 'views'
+		md: require 'marked'
+		d: getDateVars
+		tyne: test

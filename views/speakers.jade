@@ -39,12 +39,13 @@ block content
 				.row.text-center.masonry__container
 					if contentful.speakers != undefined
 						for item in contentful.speakers
-							.col-sm-4.clearfix.reason.masonry__item
-								.col-sm-12.col-xs-3.imagebg.not-round.mb--1
-									.background-image-holder
-										img(src="#{asset(item.speakerPhoto)}")
-								.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
-									h4.text-left-xs.color-blue= item.speakerName
-									p.text-left-xs.md!= md(item.shortDescription)
-									a.text-left.btn.large.blue(href="#{item._url}")
-										span.btn__text Read Bio
+							if item.slug != "tyne-morgan"
+								.col-sm-4.clearfix.reason.masonry__item
+									.col-sm-12.col-xs-3.imagebg.not-round.mb--1
+										.background-image-holder
+											img(src="#{asset(item.speakerPhoto)}")
+									.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
+										h4.text-left-xs.color-blue= item.speakerName
+										p.text-left-xs.md!= md(item.shortDescription)
+										a.text-left.btn.large.blue(href="#{item._url}")
+											span.btn__text Read Bio

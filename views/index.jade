@@ -149,6 +149,19 @@ block content
 			.container
 				.row.text-center
 					.col-sm-12
+						h2.color-green Connect Summit Master of Ceremonies
+					.col-sm-3.col-center.mb--1
+						//-p=JSON.stringify(tyne.tyne)
+						img(src="#{asset(tyne.tyne.speakerPhoto)}")
+					.col-sm-8.col-center
+						h6.short-description= tyne.tyne.shortDescription
+						a.btn.green.large(href="/speaker/tyne-morgan")
+							span.btn__text FULL BIO
+
+		section
+			.container
+				.row.text-center
+					.col-sm-12
 						h2.color-green Park Hyatt Resort, Beaver Creek, CO
 						h6.short-description.
 							Overlooking scenic Beaver Creek Mountain, Park Hyatt Beaver Creek Resort and Spa is a luxury Colorado Resort where you can experience the vacation of your dreams.  From breathtaking mountain views to championship golf course to exquisite cuisine, the resort offers the perfect year-round Vail Valley mountain escape.
