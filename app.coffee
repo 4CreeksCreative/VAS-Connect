@@ -7,6 +7,28 @@ slugify      = require 'slugify'
 contentful   = require 'roots-contentful'
 md           = require 'marked'
 
+getDateVars = (entry) ->
+	#console.log(entry)
+	if entry.fields.timeSlot != undefined
+		dateToFormat = entry.fields.timeSlot
+	if dateToFormat != undefined
+		days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		dateoo = new Date(dateToFormat)
+		entry.dateFormatted = {}
+		entry.dateFormatted.test = entry.artistName
+		entry.dateFormatted.default = dateoo
+		entry.dateFormatted.day = dateoo.getDate()
+		entry.dateFormatted.dayName = days[dateoo.getDay()]
+		entry.dateFormatted.month = months[dateoo.getMonth()]
+		entry.dateFormatted.year = dateoo.getFullYear()
+		entry.dateFormatted.hour = if dateoo.getHours() >= 12 then dateoo.getHours() - 12 else dateoo.getHours()
+		if entry.dateFormatted.hour == 0
+			entry.dateFormatted.hour = 12
+		entry.dateFormatted.ampm = if dateoo.getHours() >= 12 then "PM" else "AM"
+		entry.dateFormatted.minutes = if dateoo.getMinutes() < 10 then '0' + dateoo.getMinutes() else dateoo.getMinutes()
+		console.log(JSON.stringify(entry.dateFormatted))
+
 module.exports =
 	output: 'public'
 	env: 'en'
@@ -14,6 +36,7 @@ module.exports =
 		env: 'en'
 		basedir: 'views'
 		md: require 'marked'
+		d: getDateVars
 		
 	ignores: ['start_app.js','readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf','**/public/**','**/img/resized/*','**/img/stack/*','*.coffee']
 
@@ -38,6 +61,14 @@ module.exports =
 					filters:{
 						'order':'fields.order'
 					}
+				events:
+					id:"scheduleSection"
+					filters:{
+						'order':'fields.order'
+					}
+				# eventItems:
+				# 	id:"scheduleItem"
+				# 	transform: getDateVars
 	]
 
 	stylus:

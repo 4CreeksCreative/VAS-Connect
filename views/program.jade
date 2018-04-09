@@ -53,6 +53,35 @@ block content
 								a(href="#day3")#day3-anchor.btn.large.blue
 									span.btn__text Day 3
 		section#events
+			if contentful.events != undefined
+				for section in contentful.events
+					div(id="#{section.sectionId}-section")
+						.container
+							.row
+								.col-sm-12
+									h3.weight-700.color-blue.float-left= section.sectionTitle
+									span(id="#{section.sectionId}").show-all.float-right.btn.medium.gray
+										span.btn__text Toggle all answers
+						if section.scheduleItems != undefined
+							.bg-gray2
+								.container
+									//-EVENT
+									for event in section.scheduleItems
+										- d(event)
+										.row.event
+											if event.fields.timeSlot != undefined
+												.col-md-3.event-title
+													h4.color-darkBlue.event-time= event.dateFormatted.hour + ":" + event.dateFormatted.minutes + event.dateFormatted.ampm
+											.col-md-6.event-details
+												//-p= JSON.stringify(event)
+												h4= event.fields.title
+												if event.fields.description != undefined
+													.event-description(style="display:none;")
+														.md!= md(event.fields.description)
+											if event.fields.description != undefined
+												.float-right
+													.arrow
+		//-section#events
 			#day1-section
 				.container
 					.row
