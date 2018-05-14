@@ -96,14 +96,15 @@ block content
 			.main-carousel
 				if contentful.speakers != undefined
 					for item in contentful.speakers
-						.carousel-cell
-							.carousel-cell-image(style="background:url('#{asset(item.speakerPhoto)}');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='#{item.speakerPhoto.fields.title}', width='', height='')
-							.carousel-cell-content
-								h3= item.speakerName
-								if item.shortDescription != undefined
-									.md!= md(item.shortDescription)
-								a.btn.white.large(href="#{item._url}")
-									span.btn__text Read More
+						if item.slug != "tyne-morgan"
+							.carousel-cell
+								.carousel-cell-image(style="background:url('#{asset(item.speakerPhoto)}');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='#{item.speakerPhoto.fields.title}', width='', height='')
+								.carousel-cell-content
+									h3= item.speakerName
+									if item.shortDescription != undefined
+										.md!= md(item.shortDescription)
+									a.btn.white.large(href="#{item._url}")
+										span.btn__text Read More
 
 				//- .carousel-cell
 				//- 	.carousel-cell-image(style="background:url('/img/speakers/tim.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
