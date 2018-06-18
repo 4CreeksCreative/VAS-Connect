@@ -96,7 +96,7 @@ block content
 			.main-carousel
 				if contentful.speakers != undefined
 					for item in contentful.speakers
-						if item.slug != "tyne-morgan" && item.speakerPhoto != undefined
+						if item.slug != "tyne-morgan" && item.speakerPhoto != undefined && item.speakerId < 4
 							.carousel-cell
 								.carousel-cell-image(style="background:url('#{asset(item.speakerPhoto)}');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='#{item.speakerPhoto.fields.title}', width='', height='')
 								.carousel-cell-content
