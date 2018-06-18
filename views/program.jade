@@ -68,7 +68,7 @@ block content
 									//-EVENT
 									for event in section.scheduleItems
 										- d(event)
-										.row.event
+										.row.event.active
 											if event.fields.timeSlot != undefined
 												.col-md-3.event-title
 													h4.color-darkBlue.event-time= event.dateFormatted.hour + ":" + event.dateFormatted.minutes + event.dateFormatted.ampm
@@ -76,7 +76,7 @@ block content
 												//-p= JSON.stringify(event)
 												h4= event.fields.title
 												if event.fields.description != undefined
-													.event-description(style="display:none;")
+													.event-description
 														.md!= md(event.fields.description)
 											if event.fields.description != undefined
 												.float-right
