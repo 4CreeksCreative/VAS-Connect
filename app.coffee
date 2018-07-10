@@ -7,6 +7,7 @@ slugify      = require 'slugify'
 contentful   = require 'roots-contentful'
 md           = require 'marked'
 test         = {}
+currentYear  = 2019
 
 getTyne = (entry) ->
 	if entry.slug == 'tyne-morgan'
@@ -89,3 +90,4 @@ module.exports =
 		md: require 'marked'
 		d: getDateVars
 		tyne: test
+		currentYear: currentYear

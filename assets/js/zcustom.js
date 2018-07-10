@@ -51,3 +51,13 @@ $('form.form-email.custom-script').submit(function(e){
 	else e.preventDefault(); mr.forms.showFormError(formSuccess, formError, 1000, 5000, 500);
 
 })
+
+$(document).on('click', 'a', function(event) {
+  if ($.attr(this, 'href') !== void 0 && $.attr(this, 'href').substring(0, 1) === '#') {
+    event.preventDefault();
+    $('html, body').stop().animate({
+      scrollTop: $($.attr(this, 'href')).offset().top - 360,
+      easing: 'swing'
+    }, 500);
+  }
+});
