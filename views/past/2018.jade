@@ -6,19 +6,66 @@ block content
 			.hero.height-30
 				.header-title
 					h1.text-center
-						span.h1-sub PROGRAM
+						span.h1-sub Connect Summit 2018
 					h1.ctr.
 						Immerse yourself in inspiring stories and experiences
 				.lines
 
-			//-.slider(data-arrows='false', data-paging='false')
-				ul.slides
-					li.height-80.unpad.imagebg.parallax
-						.background-image-holder
-							img(src="/img/test.jpg")
-					li.height-80.unpad.imagebg.parallax
-						.background-image-holder
-							img(src="/img/test.jpg")
+		section.carousel.unpad-top
+			.main-carousel
+				- var n = 1
+				while n < 14
+					.carousel-cell
+						.carousel-cell-image(style="background:url('/img/2018/2018-#{n++}.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", width='', height='')
+						//-.carousel-cell-content
+							h3= item.speakerName
+							if item.shortDescription != undefined
+								.md!= md(item.shortDescription)
+							a.btn.white.large(href="#{item._url}")
+								span.btn__text Read More
+
+				//- .carousel-cell
+				//- 	.carousel-cell-image(style="background:url('/img/speakers/tim.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+				//- 	.carousel-cell-content
+				//- 		h3 Tim Taylor
+				//- 		p
+				//- 			| Lorem Ipsum dolar amet
+			script.
+				$(document).ready(function(){
+						
+
+					var $carousel = $('.main-carousel').flickity({
+						// options
+						cellAlign: 'left',
+						contain: false,
+						wrapAround: true,
+						selectedAttraction: 0.05,
+						friction: 0.5,
+						pageDots: false,
+						accessibility: false,
+						adaptiveHeight: true,
+						arrowShape: {
+						  x0: 10,
+						  x1: 60, y1: 50,
+						  x2: 65, y2: 45,
+						  x3: 20
+						}
+					});
+					if($('.main-carousel').length) {
+						//carousel exists, set arrow position
+						var carouselImageHeight = $('.carousel-cell-image').height();
+						$('.flickity-prev-next-button').css('top', (carouselImageHeight / 2));
+					}
+
+					/*
+					var flkty = $carousel.data('flickity');
+						$carousel.on( 'settle.flickity', function() {
+						  console.log( 'Flickity settled at ' + flkty.selectedIndex )
+						})
+					*/
+
+					});
+
 
 			//-.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
 				.row.text-center
@@ -33,12 +80,12 @@ block content
 			.container
 				.row.text-center
 					.col-sm-12
-						h5.short-description The line up for the 2019 Connect Summit is amazing. Be inspired by all people who make this event possible.
-						h6.short-description.
-							Stay tuned for the 2019 Program Outline.
-						a.btn.green.medium(href="/vision")
-							span.btn__text READ ABOUT OUR VISION
-		//-section#agenda
+						h5.short-description The line up for the 2018 Connect Summit was amazing. Be inspired by all people who made this event possible.
+						//-h6.short-description.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						//-a.btn.green.medium(href="#")
+							span.btn__text READ ABOUT OUR MISSION
+		section#agenda
 			.container
 				.row.text-center
 					.col-sm-12
@@ -52,11 +99,11 @@ block content
 							li
 								a(href="#day3")#day3-anchor.btn.large.blue
 									span.btn__text Day 3
-		//-section#events
+		section#events
 			if contentful.events != undefined
 				for section in contentful.events
 					//-p=JSON.stringify(section.year)
-					if section.year != undefined && section.year.fields.year == currentYear
+					if section.year != undefined && section.year.fields.year == "2018"
 						div(id="#{section.sectionId}-section")
 							.container
 								.row
