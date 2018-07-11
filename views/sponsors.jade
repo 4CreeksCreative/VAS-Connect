@@ -29,19 +29,45 @@ block content
 						h4.color-white.unmarg JUNE 25 - 27, 2018
 						h5.color-white Park Hyatt Resort, Beaver Creek, Colorado
 
+		
 		section
 			.container
 				.row.text-center
 					.col-sm-12
-						h5.short-description The 2018 Connect Summit wouldn't be possible without the leadership and resources of our generous sponsors. We encourage all attendees to explore each of our event sponsor's pages linked below, and connect with them at the conference to discuss ways to start transforming your dairy operation today. 
+						h2 2019 Sponsors
+						h5.short-description The 2019 Connect Summit wouldn't be possible without the leadership and resources of our generous sponsors. We encourage all attendees to explore each of our event sponsor's pages linked below, and connect with them at the conference to discuss ways to start transforming your dairy operation today.
 		section
 			.container.masonry
 				.row.text-center.masonry__container
 					if contentful.sponsors != undefined
 						for item in contentful.sponsors
-							.masonry__item.col-sm-3
-								if item.companyWebsite != undefined
-									a(target="_blank" href="#{item.companyWebsite}")
-										img(src="#{asset(item.logo)}")
-								else
-									img(src="#{asset(item.logo)}")
+							if item.summits != undefined
+								for year in item.summits
+									if year.fields.year == currentYear
+										.masonry__item.col-sm-3
+											if item.companyWebsite != undefined
+												a(target="_blank" href="#{item.companyWebsite}")
+													img(src="#{asset(item.logo)}")
+											else
+												img(src="#{asset(item.logo)}")
+		section
+			.container
+				hr.programHR
+				.row.text-center
+					.col-sm-12
+						h2 2018 Sponsors
+						h5.short-description The 2018 Connect Summit wouldn't have been possible without the leadership and resources of our generous sponsors. We encourage all attendees to explore each of our event sponsor's pages linked below, and connect with them at the conference to discuss ways to start transforming your dairy operation today.
+		section
+			.container.masonry
+				.row.text-center.masonry__container
+					if contentful.sponsors != undefined
+						for item in contentful.sponsors
+							if item.summits != undefined
+								for year in item.summits
+									if year.fields.year == '2018'
+										.masonry__item.col-sm-3
+											if item.companyWebsite != undefined
+												a(target="_blank" href="#{item.companyWebsite}")
+													img(src="#{asset(item.logo)}")
+											else
+												img(src="#{asset(item.logo)}")
