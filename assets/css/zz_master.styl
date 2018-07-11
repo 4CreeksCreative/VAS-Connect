@@ -173,6 +173,20 @@ section
 	background-color $blueGradient
 
 // --- fixes
+@media (max-width: 992px)
+	.dropdown__container
+		.dropdown__content
+			left 0 !important
+			background none !important
+			ul
+				li
+					margin-bottom 0 !important
+					padding 0 !important
+					a
+						color $white !important
+						&:hover
+							color $blue !important
+						
 .not-round
 	border-radius 0px
 	min-height 150px
@@ -913,7 +927,7 @@ header
 					color $blue
 					transition .2s
 		#mega-menu
-			a
+			a, span.dropdown__trigger
 				text-transform none
 				opacity 1
 				color $white
@@ -925,6 +939,9 @@ header
 					color $blue
 					transition .2s
 			h1,h2,h3,h4,h5,h6,p
+				a
+					color $blue
+			.dropdown__content ul li
 				a
 					color $blue
 	#mega-menu
@@ -1173,7 +1190,7 @@ body
 			transition 0.5s
 			right -80vw !important
 			//display none
-		.container
+		>.container
 			padding 50px 25px
 	#menu-overlay-toggle
 		display block !important
