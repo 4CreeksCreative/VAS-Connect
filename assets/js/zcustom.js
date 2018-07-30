@@ -6,7 +6,7 @@ $(document).on('scroll', function(){
 		$('header').removeClass('sticky');
 	}
 })
-$(document).on('click', '#events .event', function(){
+$(document).on('click', '#events .event .arrow', function(){
 	var event = $(this)
 	if (event.hasClass('active')){
 		event.removeClass('active').find('.event-description').stop().slideToggle()
