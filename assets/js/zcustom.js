@@ -7,7 +7,7 @@ $(document).on('scroll', function(){
 	}
 })
 $(document).on('click', '#events .event .arrow', function(){
-	var event = $(this)
+	var event = $(this).parents('.event')
 	if (event.hasClass('active')){
 		event.removeClass('active').find('.event-description').stop().slideToggle()
 	}
