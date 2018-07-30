@@ -183,9 +183,9 @@ block content
 							if item.summits != undefined
 								for year in item.summits
 									if year.fields.year == '2018'
-										.col-sm-4.clearfix.reason.masonry__item
+										.col-sm-4.clearfix.masonry__item
 											if item.speakerPhoto != undefined
-												.col-sm-12.col-xs-3.mb--1.imagebg(style="height:300px;")
+												.col-sm-12.col-xs-3.mb--1.imagebg(style="height:300px;float:none;")
 													.background-image-holder
 														img(src="#{asset(item.speakerPhoto)}")
 											.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
