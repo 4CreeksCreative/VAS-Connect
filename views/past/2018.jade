@@ -1,0 +1,209 @@
+extends /layout
+
+block content
+	.content
+		section#hero.pos-relative
+			.hero.height-30
+				.header-title
+					h1.text-center
+						span.h1-sub Connect Summit 2018
+					h1.ctr.
+						Immerse yourself in inspiring stories and experiences
+				.lines
+
+		section.carousel.unpad-top
+			.main-carousel
+				- var n = 1
+				while n <= 14
+					.carousel-cell
+						.carousel-cell-image(style="background:url('/img/2018/2018-#{n++}.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", width='', height='')
+						//-.carousel-cell-content
+							h3= item.speakerName
+							if item.shortDescription != undefined
+								.md!= md(item.shortDescription)
+							a.btn.white.large(href="#{item._url}")
+								span.btn__text Read More
+
+				//- .carousel-cell
+				//- 	.carousel-cell-image(style="background:url('/img/speakers/tim.jpg');background-position: left center;background-size: cover;background-repeat: no-repeat; ", alt='slider-image-1', width='', height='')
+				//- 	.carousel-cell-content
+				//- 		h3 Tim Taylor
+				//- 		p
+				//- 			| Lorem Ipsum dolar amet
+			script.
+				$(document).ready(function(){
+						
+
+					var $carousel = $('.main-carousel').flickity({
+						// options
+						cellAlign: 'left',
+						contain: false,
+						wrapAround: true,
+						selectedAttraction: 0.05,
+						friction: 0.5,
+						pageDots: false,
+						accessibility: false,
+						adaptiveHeight: true,
+						arrowShape: {
+						  x0: 10,
+						  x1: 60, y1: 50,
+						  x2: 65, y2: 45,
+						  x3: 20
+						}
+					});
+					if($('.main-carousel').length) {
+						//carousel exists, set arrow position
+						var carouselImageHeight = $('.carousel-cell-image').height();
+						$('.flickity-prev-next-button').css('top', (carouselImageHeight / 2));
+					}
+
+					/*
+					var flkty = $carousel.data('flickity');
+						$carousel.on( 'settle.flickity', function() {
+						  console.log( 'Flickity settled at ' + flkty.selectedIndex )
+						})
+					*/
+
+					});
+
+
+			//-.container.pos-vertical-center(style="position:absolute;z-index:1;LEFT:0;RIGHT:0;")
+				.row.text-center
+					.col-sm-12
+						h1.color-white
+							|#[span.bold Connect 18] A Dairy Tech Summit
+						p.color-white Executive dairy technology summit for the latest innovations and thought leadership in the global dairy industry.
+						h4.color-white.unmarg JUNE 25 - 27, 2018
+						h5.color-white Park Hyatt Resort, Beaver Creek, Colorado
+
+		
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						ul
+							li
+								a(href="https://vimeo.com/user84344592" target="_blank").btn.large.blue
+									span.btn__text Connect 2018 Speaker Videos
+							li
+								a(href="https://proofs.4cc.co/Connect-Summit/2018" target="_blank").btn.large.blue
+									span.btn__text Connect 2018 Photos
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						h3 2018 Program
+						h5.short-description The line up for the 2018 Connect Summit was amazing. Be inspired by all people who made this event possible.
+						//-h6.short-description.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+						//-a.btn.green.medium(href="#")
+							span.btn__text READ ABOUT OUR MISSION
+		
+		section#agenda
+			.container
+				.row.text-center
+					.col-sm-12
+						ul#shortcuts
+							li
+								a(href="#day1")#day1-anchor.btn.large.blue
+									span.btn__text Day 1
+							li
+								a(href="#day2")#day2-anchor.btn.large.blue
+									span.btn__text Day 2
+							li
+								a(href="#day3")#day3-anchor.btn.large.blue
+									span.btn__text Day 3
+		section#events
+			if contentful.events != undefined
+				for section in contentful.events
+					//-p=JSON.stringify(section.year)
+					if section.year != undefined && section.year.fields.year == "2018"
+						div(id="#{section.sectionId}-section")
+							.container
+								.row
+									.col-sm-12
+										h3.weight-700.color-blue.float-left= section.sectionTitle
+										span(id="#{section.sectionId}").show-all.float-right.btn.medium.gray
+											span.btn__text Toggle all details
+							if section.scheduleItems != undefined
+								.bg-gray2
+									.container
+										//-EVENT
+										for event in section.scheduleItems
+											- d(event)
+											.row.event
+												if event.fields.timeSlot != undefined
+													.col-md-3.event-title
+														h4.color-darkBlue.event-time= event.dateFormatted.hour + ":" + event.dateFormatted.minutes + event.dateFormatted.ampm
+												.col-md-6.event-details
+													h4= event.fields.title
+													
+													//-p= JSON.stringify(event)
+													
+													if event.fields.description != undefined
+														.event-description.clearfix
+															if event.fields.speaker != undefined
+																h5 Speakers
+																for speaker in event.fields.speaker
+																	a(href="/speaker/#{speaker.fields.slug}")
+																		.unpad.float-left
+																			if speaker.fields.speakerPhoto != undefined
+																				.imagebg(style="height:200px;width:200px;")
+																					.background-image-holder
+																						img(src="#{asset(speaker.fields.speakerPhoto)}")
+																			else
+																				.imagebg(style="height:200px;width:200px;")
+																					.background-image-holder
+																						img(src="img/speakers/blank.png")
+																			if speaker.fields.speakerName != undefined
+																				h6.text-center(style="margin-top:10px;")= speaker.fields.speakerName
+																hr.programHR
+															.col-sm-12.unpad(style="margin-top:10px;")
+																h5 Description
+																.md!= md(event.fields.description)
+															
+												if event.fields.description != undefined
+													.float-right
+														.arrow
+
+	
+	
+		section
+			.container
+				.row.text-center
+					.col-sm-12
+						h3 2018 Speakers
+						h5.short-description The speakers at the inaugural Connect Summit bring a wealth of knowledge from both the dairy and tech worlds to inform and inspire attendees to make positive changes in their dairy operation today. Learn more about some of our guests here before attending!
+
+		section#speakers.speakers
+			.container.masonry
+				.row.text-center.masonry__container
+					if contentful.speakers != undefined
+						for item in contentful.speakers
+							if item.summits != undefined
+								for year in item.summits
+									if year.fields.year == '2018'
+										.col-sm-4.clearfix.masonry__item
+											if item.speakerPhoto != undefined
+												.col-sm-12.col-xs-3.mb--1.imagebg(style="height:300px;float:none;")
+													.background-image-holder
+														img(src="#{asset(item.speakerPhoto)}")
+											.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
+												h4.text-left-xs.color-blue= item.speakerName
+												//-p.text-left-xs.md!= md(item.shortDescription)
+												a.text-left.btn.large.blue(href="#{item._url}")
+													span.btn__text Read Bio
+													
+													
+													
+	script.
+		var agendaOffset = $('#agenda').offset().top
+		$(document).on('scroll', function(){
+			//console.log($('#agenda').offset().top)
+			if(agendaOffset <= $(document).scrollTop() && !$('#agenda').hasClass('sticky')){
+				$('#agenda').addClass('sticky');
+			}
+			else if (agendaOffset >= $(document).scrollTop() && $('#agenda').hasClass('sticky')){
+				$('#agenda').removeClass('sticky');
+			}
+		})

@@ -1,4 +1,4 @@
-extends layout
+extends /layout
 
 block content
 	.content
@@ -34,18 +34,26 @@ block content
 				.row.text-center
 					.col-sm-12
 						h5.short-description The speakers at the inaugural Connect Summit bring a wealth of knowledge from both the dairy and tech worlds to inform and inspire attendees to make positive changes in their dairy operation today. Learn more about some of our guests here before attending!
-		section#reasons-to-attend.speakers
+						h6.short-description.
+							Stay tuned for the 2019 speaker lineup.
+						a.btn.green.medium(href="/past/2018#speakers")
+							span.btn__text SEE 2018 SPEAKERS
+
+		//-section#reasons-to-attend.speakers
 			.container.masonry
 				.row.text-center.masonry__container
 					if contentful.speakers != undefined
 						for item in contentful.speakers
-							if item.slug != "tyne-morgan"
-								.col-sm-4.clearfix.reason.masonry__item
-									if item.speakerPhoto != undefined
-										.col-sm-12.col-xs-3.mb--1
-											img(src="#{asset(item.speakerPhoto)}")
-									.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
-										h4.text-left-xs.color-blue= item.speakerName
-										p.text-left-xs.md!= md(item.shortDescription)
-										a.text-left.btn.large.blue(href="#{item._url}")
-											span.btn__text Read Bio
+							if item.summits != undefined
+								for year in item.summits
+									if year.fields.year == currentYear
+										.col-sm-4.clearfix.reason.masonry__item
+											if item.speakerPhoto != undefined
+												.col-sm-12.col-xs-3.mb--1.imagebg(style="height:300px;")
+													.background-image-holder
+														img(src="#{asset(item.speakerPhoto)}")
+											.col-sm-12.col-xs-9.col-xs-offset-3.col-sm-offset-0.text-left-sm
+												h4.text-left-xs.color-blue= item.speakerName
+												//-p.text-left-xs.md!= md(item.shortDescription)
+												a.text-left.btn.large.blue(href="#{item._url}")
+													span.btn__text Read Bio

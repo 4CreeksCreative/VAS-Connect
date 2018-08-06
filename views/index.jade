@@ -1,11 +1,13 @@
-extends layout
+extends /layout
 
 block content
 	.content
-		section#hero.home.pos-relative
+		section#hero.home.pos-relative.imagebg.parallax
+			.background-image-holder
+				img(src="img/homebg.jpg")
 			.header-title
 				h1.ctr
-					| Connect Summit 2018 
+					| Connect Summit 2019 
 					//-span.h1-sub A DairyTech Summit
 			
 				h3.ctr
@@ -13,7 +15,7 @@ block content
 				h2.ctr.color-white
 					| Transforming Dairy Operations Through Connected Technology
 			
-				.info-date.ctr June 25-27, 2018
+				.info-date.ctr June 10-13, 2019
 			
 				.info-location.ctr Park Hyatt Resort, Beaver Creek, Colorado
 			.lines
@@ -61,7 +63,7 @@ block content
 				.container
 					.row
 						.col-xs-7.col-sm-6.col-md-offset-1.col-lg-5.col-lg-offset-2
-							h4.color-blue Connect'18 Event App available
+							h4.color-blue Connect'19 Event App available
 							p.
 								Download the HelloCrowd app now - available for iOS and Android!
 							a.btn.blue.medium.toggle-trigger(data-toggle="#app-instructions")
@@ -90,7 +92,7 @@ block content
 								img(src="/img/googleplay.png", alt="google play icon")
 			img.phoneimg(src="/img/phone.png")
 
-		section.carousel.unpad-top
+		//-section.carousel.unpad-top
 			.container.mb--1
 				.row.text-center
 					.col-sm-12
@@ -118,44 +120,44 @@ block content
 				//- 		h3 Tim Taylor
 				//- 		p
 				//- 			| Lorem Ipsum dolar amet
-		script.
-			$(document).ready(function(){
-					
+			script.
+				$(document).ready(function(){
+						
 
-				var $carousel = $('.main-carousel').flickity({
-					// options
-					cellAlign: 'left',
-					contain: false,
-					wrapAround: true,
-					selectedAttraction: 0.05,
-					friction: 0.5,
-					pageDots: false,
-					accessibility: false,
-					adaptiveHeight: true,
-					arrowShape: {
-					  x0: 10,
-					  x1: 60, y1: 50,
-					  x2: 65, y2: 45,
-					  x3: 20
+					var $carousel = $('.main-carousel').flickity({
+						// options
+						cellAlign: 'left',
+						contain: false,
+						wrapAround: true,
+						selectedAttraction: 0.05,
+						friction: 0.5,
+						pageDots: false,
+						accessibility: false,
+						adaptiveHeight: true,
+						arrowShape: {
+						  x0: 10,
+						  x1: 60, y1: 50,
+						  x2: 65, y2: 45,
+						  x3: 20
+						}
+					});
+					if($('.main-carousel').length) {
+						//carousel exists, set arrow position
+						var carouselImageHeight = $('.carousel-cell-image').height();
+						$('.flickity-prev-next-button').css('top', (carouselImageHeight / 2));
 					}
-				});
-				if($('.main-carousel').length) {
-					//carousel exists, set arrow position
-					var carouselImageHeight = $('.carousel-cell-image').height();
-					$('.flickity-prev-next-button').css('top', (carouselImageHeight / 2));
-				}
 
-				/*
-				var flkty = $carousel.data('flickity');
-					$carousel.on( 'settle.flickity', function() {
-					  console.log( 'Flickity settled at ' + flkty.selectedIndex )
-					})
-				*/
+					/*
+					var flkty = $carousel.data('flickity');
+						$carousel.on( 'settle.flickity', function() {
+						  console.log( 'Flickity settled at ' + flkty.selectedIndex )
+						})
+					*/
 
-				});
+					});
 
 
-		section
+		//-section
 			.container
 				.row.text-center
 					.col-sm-12
@@ -163,8 +165,8 @@ block content
 					.col-sm-3.col-center.mb--1
 						//-p=JSON.stringify(tyne.tyne)
 						img(src="#{asset(tyne.tyne.speakerPhoto)}")
-					.col-sm-8.col-center
-						h6.short-description= tyne.tyne.shortDescription
+					.col-sm-8.col-center.text-center
+						h6.short-description.col-center.md!= md(tyne.tyne.shortDescription)
 						a.btn.green.large(href="/speaker/tyne-morgan")
 							span.btn__text FULL BIO
 

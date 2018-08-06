@@ -25,8 +25,6 @@ header
 					.col-sm-12.col-xs-12.text-right.text-right-xs.float-right.float-right-sm
 						.bar__module
 							ul.menu-horizontal.text-right.text-left-sm
-								//-li
-									a(href="#")= contentful.Navigation[0].solutions
 								li
 									a(href="/vision") VISION
 								li
@@ -37,11 +35,20 @@ header
 									a(href="/location") LOCATION
 								li
 									a(href="/sponsors") SPONSORS
-								//-li
-									a(href="/blog") BLOG
 								li
 									a(href="/questions") Q & A
-								li.header-btn
+								
+								li.dropdown
+									span.dropdown__trigger PAST SUMMITS
+									.dropdown__container
+										.container
+											.row
+												.col-xs-12.col-sm-5.col-md-3.dropdown__content
+													ul
+														li.dropdown-item
+															a(href="/past/2018") Connect 2018
+												
+								//-li.header-btn
 									a.unmarg.btn.yellow(href="https://www.eventbrite.com/e/connect-summit-2018-tickets-42719666673" target="_blank")
 										span.btn__text Register Now
 								li.header-btn.visible-sm.visible-xs
